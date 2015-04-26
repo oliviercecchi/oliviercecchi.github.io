@@ -12,7 +12,7 @@
 <body>
 
 <style>
-body{font-family: Helvetica, Arial; font-weight: regular; font-size: 15px; color: #555; background-color: #FFF; margin: 0;}
+body{font-family: Helvetica, Arial; font-weight: regular; font-size: 15px; color: #555; background-color: #FFF; margin: 20px 20px 100px 20px;}
 h1{font-weight: bold; font-size: 31px; letter-spacing: -1px; color: #333; line-height: 33px;}
 h3{font-weight: bold; font-size: 20px; col:#57564E; margin: 10px 0 0 0;}
 h4{font-weight: bold; font-size: 14px; color: #000; margin: 20px 20 20 20px;line-height:14px}
@@ -49,14 +49,18 @@ a:hover{text-decoration: underline;}
    <div class="span8"><a href="index.html"><h1>Area of Origin - Data collected during April 2015</h1></a>
 	   <div class="row-fluid">
 		  <div id="map"></div>
+		  <div id="mapheader"style = "position:fixed; bottom:0px; right:0px;width:200px;background-color:white"><a id="dmapheader" href="javascript:togglemap('map2','dmapheader');"><small>Show map</small></a>
+		  <div id="map2"style = "position:relative;display:none"></div>
+		  </div>
 	   </div>
    </div>
    <div class="span4"><h3>Coverage <small><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></h3>
 	<div class="span12 pull-right" style = "position:fixed; top:0px; right:0; width:250px; background:rgba(255,255,255,0.5)" id="count-info">
       	<span class="filter-count "></span> selected out of <span class="total-count "></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+		
       </div> 
-	<div class="span12 pull-right" style = "position:fixed; bottom:0px; right:0; width:300px; background:rgba(255,255,255,0.5)" id="about">
-      	<span></span><h6>Area of Origin data collected during April 2015 - Informations based on March 2015</h6>
+	<div class="span12 pull-right" style = "position:fixed; bottom:0px; left:0; width:300px; background:rgba(255,255,255,0.5)" id="about">
+      	<span></span><h6>Area of Origin data collected during April 2015</h6>
     </div>
 	    <div class="row-fluid">
 		<div class="span6">
@@ -64,7 +68,7 @@ a:hover{text-decoration: underline;}
 			  <div id="distr"><p>Number of villages assessed in District</p></div>
 		</div>
 		<div class="span6">
-				<div id="sub_dist"><p>Number of villages assessed in Sub-district</p></div>
+				<div id="sub_dist"><p>Number of villages assessed </br>in Sub-district</p></div>
 		</div>
 		
 	  </div>
@@ -147,9 +151,9 @@ a:hover{text-decoration: underline;}
     <div class="row-fluid" id="nfi_content"style="display: none">
     <div class="row-fluid">
 		<div id="elec_before_conflict"><p>Primary source of electricity </br>- Before the conflict</p></div>
-		<div id="elec_prev_month"><p>Primary source of electricity </br>- this month</p></div>
+		<div id="elec_prev_month"><p>Primary source of electricity </br>- March 2015</p></div>
 	</div> 
-<div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets this month</h4>
+<div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets in March 2015</h4>
 	  <div id="price_butane"><p>Butane gas - average price (SYP)</br> (1 cannister)</p></div>
 	  <div id="price_kerosene"><p>Kerosene - average price (SYP)</br> (1 litre)</p></div>
 	  <div id="price_propane"><p>Propane gas - average price (SYP) </br> (1 cannister)</p></div>
@@ -209,7 +213,7 @@ a:hover{text-decoration: underline;}
     <div class="row-fluid">
 		<div id="rzn_not_access_health"><p>Most common reason why people can</br>not access the health care facilities</p></div>
 	</div>
-	<div class="row-fluid"><h4>Average price (SYP) of Health care items on village markets this month</h4>
+	<div class="row-fluid"><h4>Average price (SYP) of Health care items on village markets in March 2015</h4>
 		<div id="health_price_antibio"><p>Antibiotics - average price (SYP)</br>(one packet)</p></div>
 		<div id="health_price_analgesics"><p>Analgesics (painkillers - average price (SYP)</br>(one packet)</p></div>
 		<div id="health_price_ors"><p>Oral rehydration salts (ORS) - average price (SYP)</br>(one packet)</p></div>
@@ -247,7 +251,7 @@ a:hover{text-decoration: underline;}
 		 <a id="WASH_head" href="javascript:toggle('WASH_content','WASH_head');">Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
     <div class="row-fluid" id="WASH_content"style="display: none">
-    <div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets this month</h4>
+    <div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets in March 2015</h4>
       <div id="price_soap"><p>Soap (one bar)</p></div>
       <div id="price_jerrycan"><p>Jerry can (1)</p></div>
       <div id="price_laundry"><p>Laundry powder (1kg)</p></div>
@@ -267,7 +271,7 @@ a:hover{text-decoration: underline;}
 	</div>
     <div class="row-fluid">
     <div class="span6">
-    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water in village since this month</h4>
+    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water in village since March 2015</h4>
       <div id='WASH_water_no_reducDIV'><p>No reduction</br></br></p></div>
 	  <div id='WASH_water_system_damagedDIV'><p>Water system damaged</br></br></p></div>
 	  <div id='WASH_water_lack_elecDIV'><p>Lack of electricity</br></br></p></div>
@@ -318,12 +322,12 @@ a:hover{text-decoration: underline;}
 		  <div id='food_acc_rzn_acc_nofuelDIV'><p>Cooking fuel</br>is not possible to access</p></div>
 		 </div>
 	 <div class="row-fluid">
-		  <div id='food_IDPs_foodDIV'><p>% of <strong style="color:#DA4400">IDPs </strong>received food assistance </br>during this month</p></div>
-		  <div id='food_pop_food_preconfDIV'><p>% of <strong style="color:#FF9933">pre-conflict population </strong> </br>received food assistance during this month</p></div>
+		  <div id='food_IDPs_foodDIV'><p>% of <strong style="color:#DA4400">IDPs </strong>received food assistance </br>during March 2015</p></div>
+		  <div id='food_pop_food_preconfDIV'><p>% of <strong style="color:#FF9933">pre-conflict population thst</strong> </br>received food assistance during March 2015</p></div>
 	</div>
 	
 	<div class="row-fluid">  
-		<div class="span6">	<h4>Average price (SYP) of food items on village markets this month</h4> 	  
+		<div class="span6">	<h4>Average price (SYP) of food items on village markets in March 2015</h4> 	  
 		  <div id='food_avg_riceDIV'><p>Rice (1 kg)</p></div>
 		  <div id='food_avg_goatDIV'><p>Mutton (1 kg)</p></div>
 		  <div id='food_avg_chickehDIV'><p>Chicken (1 kg)</p></div>
@@ -358,8 +362,8 @@ a:hover{text-decoration: underline;}
 	</div>
 	<div class="row-fluid">	    
 		  <div id='food__bread_sourceDIV'><p>Most common source of bread</br> in the village</br></br></p></div>
-		  <div id='food__day_nobreadprivDIV'><p>Number of days during this month,</br> when bread was NOT available to buy from</br>Public bakeries</p></div>
-		  <div id='food__day_nobreadpubDIV'><p>Number of days during this month,</br> when bread was NOT available to buy from</br>Private bakeries</p></div>
+		  <div id='food__day_nobreadprivDIV'><p>Number of days during March 2015,</br> when bread was NOT available to buy from</br>Public bakeries</p></div>
+		  <div id='food__day_nobreadpubDIV'><p>Number of days during March 2015,</br> when bread was NOT available to buy from</br>Private bakeries</p></div>
 	</div>
 	<div class="row-fluid">	<h4>Most common reasons why people could not access or make bread every day</h4>
 		  <div id='food_rnz_flourNADIV'><p>Flour </br>not available</p></div>
@@ -372,7 +376,7 @@ a:hover{text-decoration: underline;}
 		  <div id='food_rnz_elecEXPDIV'><p>Electricity/fuel</br> too expensive</p></div> 
     </div>
 	<div class="row-fluid">	  
-		  <div id='food_SAMDIV'><p>Children diagnosed with</br> Severe Acute Malnutrition (SAM) during this month</p></div>
+		  <div id='food_SAMDIV'><p>Children diagnosed with</br> Severe Acute Malnutrition (SAM) during March 2015</p></div>
     </div> 
     </div>
     </div>
@@ -462,7 +466,21 @@ function toggle(showHideDiv, switchTextDiv) {
 	}
 }
 
+function togglemap(showHideDiv, switchTextDiv) {
+	var ele = document.getElementById(showHideDiv);
+	var text = document.getElementById(switchTextDiv);
+	if(ele.style.display == "block") {
+    		ele.style.display = "none";
+		text.innerHTML = "<small>Show map</small>";
+  	}
+	else {
+		ele.style.display = "block";
+		text.innerHTML = "<small>Hide map</small>";
+	}
+}
+
 var mapChart          = dc.geoChoroplethChart("#map"),
+    map2Chart          = dc.geoChoroplethChart("#map2"),
     govchart          = dc.rowChart("#governo"),
     Distchart         = dc.rowChart("#distr"),
     SubDistchart      = dc.rowChart("#sub_dist"),
@@ -948,6 +966,8 @@ experiments.forEach(function(x) {
 	  
 	var  subDistMapDim     = ndx.dimension(function(d) {return [d.GEO_Subdistrict_Assessed_location];}),
       subDistMapGroup   = subDistMapDim.group(),
+	  subDistMap2Dim     = ndx.dimension(function(d) {return [d.GEO_Subdistrict_Assessed_location];}),
+      subDistMap2Group   = subDistMap2Dim.group(),
       subDistDimension  = ndx.dimension(function(d) {return d.GEO_Subdistrict_Assessed_location;}),
       subDistGroup      = subDistDimension.group(),
       DistDim           = ndx.dimension(function(d) {return d["GEO_District_Assessed_location"];}),
@@ -1340,6 +1360,22 @@ d3.json("grid.json", function (statesJson) {
               return d.properties.PageName;
           })
           .projection(d3.geo.equirectangular().center([40.2,35]).scale(6000))
+          .label(function(d) { return d.features.properties.PageName;})
+		  .title(function (d) {
+              return "Subdistrict " + d.key + ": " +d.value+ " villages assessed";
+          })
+		;  
+	map2Chart.width(200)
+          .height(150)
+          .dimension(subDistMap2Dim)
+          .group(subDistMap2Group)
+		  .colors(d3.scale.quantize().range(["#fcbba1", "#fc9272", "#fb6a4a", "#ef3b2c", "#cb181d", "#a50f15", "#67000d"]))
+          .colorDomain([0, 5])
+          .colorCalculator(function (d) { return d ? mapChart.colors()(d) : '#ccc'; })
+          .overlayGeoJson(statesJson.features, "state", function (d) {
+              return d.properties.PageName;
+          })
+          .projection(d3.geo.equirectangular().center([51,29]).scale(1800))
           .label(function(d) { return d.features.properties.PageName;})
 		  .title(function (d) {
               return "Subdistrict " + d.key + ": " +d.value+ " villages assessed";
