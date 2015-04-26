@@ -1469,7 +1469,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+          .colors(d3.scale.category20b())
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -1547,6 +1547,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 			return group.all().filter(function(kv) { return kv.key !="NA"; });
 			})              
        .innerRadius(20)
+	    .colors(d3.scale.category20b())
 		;
 		
 		palestiniansCT
@@ -1557,7 +1558,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(d3.scale.category20b())
 		;
 		
 		other_foreign_nationalsCT
@@ -1568,7 +1569,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		
@@ -1581,7 +1582,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		familyCT
@@ -1592,7 +1593,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		accessibleCT
@@ -1603,7 +1604,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		protect_assetsCT
@@ -1614,7 +1615,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		cannot_physicallyCT
@@ -1625,7 +1626,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 	     no_moneyCT
@@ -1636,7 +1637,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		transitCT
@@ -1647,7 +1648,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		
 		other_rznCT
@@ -1658,7 +1659,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+        .colors(d3.scale.category20b())
 		;
 		employment_pre_conf_popCT
         .dimension(employment_pre_conf_popDim)
@@ -1863,7 +1864,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(d3.scale.category20b())
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -3202,7 +3203,7 @@ food_IDPs_foodChart
 		 .data(function(group) {
 			return group.all().filter(function(kv) { return kv.key !="NA"; });
 			})             
-        .colors(d3.scale.category20c())
+         .colors(d3.scale.category20b())
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
