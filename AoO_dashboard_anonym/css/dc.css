@@ -72,7 +72,11 @@ div.dc-chart {
 }
 
 .dc-chart .axis text {
-    font: 8px sans-serif;
+    font:9px sans-serif;
+}
+
+.dc-chart .yAxisLabel text {
+    fill: red;
 }
 
 .dc-chart .grid-line {
@@ -217,6 +221,7 @@ div.dc-chart {
     fill-opacity: 0.6;
 }
 
+
 .dc-chart g.row text {
     fill: black;
     font-size: 10px;
@@ -224,7 +229,7 @@ div.dc-chart {
 }
 
 .dc-legend {
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .dc-legend-item {

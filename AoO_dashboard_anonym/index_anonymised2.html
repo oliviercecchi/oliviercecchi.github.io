@@ -18,7 +18,7 @@ h3{font-weight: bold; font-size: 20px; col:#57564E; margin: 10px 0 0 0;}
 h4{font-weight: bold; font-size: 14px; color: #000; margin: 20px 20 20 20px;line-height:14px}
 h5{font-size: 9px;font-style:italic; color: #57564E; margin: 0px 0px 0px 10px; line-height:10px}
 h6{font-size: 12px;font-weight: bold;  color: #57564E; margin: 5px 0px 0px 0px; line-height:14px}
-p{font-size: 12px; margin: 0px 0 5px 10px; line-height: 10px;line-height:12px}
+p{font-size: 11px;font-weight: bold; margin: 0px 0 5px 10px; line-height: 10px;line-height:12px}
 a, a:visited{color: #397DB8; text-decoration: none;}
 a:hover{text-decoration: underline;}
 
@@ -41,6 +41,12 @@ a:hover{text-decoration: underline;}
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
+#mapheader {-moz-border-radius: 15px;border-radius: 15px;position:fixed; bottom:0px; right:0px;margin: 5px 5px 5px 5px;width:200px;background-color:#EBEBEB}
+#dmapheader {margin: 5px 5px 5px 5px;}
+#dgoveader {margin: 5px 5px 5px 5px;}
+#about{position:fixed; bottom:0px;left:0; width:300px;background:rgba(255,255,255,0.5)}
+#count-info{position:fixed; top:0px; right:0; width:250px; background:rgba(255,255,255,0.5)}
+ 
 
 </style>
 
@@ -48,24 +54,36 @@ a:hover{text-decoration: underline;}
 <div class="row-fluid">
    <div class="span8"><a href="index.html"><h1>Area of Origin - Data collected during April 2015</h1></a>
 	   <div class="row-fluid">
-		  <div id="map"></div>
-		  <div id="mapheader"style = "position:fixed; bottom:0px; right:0px;width:200px;background-color:white"><a id="dmapheader" href="javascript:togglemap('map2','dmapheader');"><small>Show map</small></a>
-		  <div id="map2"style = "position:relative;display:none"></div>
+		
+		  <div id="map"></div>	
+		  <div id="mapheader">
+			<div id="mapheader1"><a id="dmapheader" href="javascript:togglemap('inset','dmapheader');"><small>Show map</small></a>
+			<div id="inset"style = "position:relative;display:none">
+				<div id="map2"style = "position:relative"><p>Sub-district assessed<p></div>
+			</div>
+		  </div>
+		  
+		  <div id="mapheader2"><a id="dgoveader" href="javascript:togglegov('ginset','dgoveader');"><small>Show Governorate</small></a>
+		 <div id="ginset"style = "position:relative;display:none">
+		  <div id="govinset"style = "position:relative"><p>Governorate<p></div>
+		  </div>
+		  
 		  </div>
 	   </div>
    </div>
+   </div>
    <div class="span4"><h3>Coverage <small><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></h3>
-	<div class="span12 pull-right" style = "position:fixed; top:0px; right:0; width:250px; background:rgba(255,255,255,0.5)" id="count-info">
+	<div class="span12 pull-right" id="count-info">
       	<span class="filter-count "></span> selected out of <span class="total-count "></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
 		
       </div> 
-	<div class="span12 pull-right" style = "position:fixed; bottom:0px; left:0; width:300px; background:rgba(255,255,255,0.5)" id="about">
+	<div class="span12 pull-right" id="about">
       	<span></span><h6>Area of Origin data collected during April 2015</h6>
     </div>
 	    <div class="row-fluid">
 		<div class="span6">
-			  <div id="governo"><p>Number of villages assessed in Governorate</p></div>
-			  <div id="distr"><p>Number of villages assessed in District</p></div>
+			  <div id="governo"><p>Number of villages assessed</br> in Governorate</p></div>
+			  <div id="distr"><p>Number of villages assessed</br> in District</p></div>
 		</div>
 		<div class="span6">
 				<div id="sub_dist"><p>Number of villages assessed </br>in Sub-district</p></div>
@@ -188,7 +206,7 @@ a:hover{text-decoration: underline;}
       <div id="mobile_clinic"><p>Mobile clinics - status</p></div>
 	</div>
     <div class="row-fluid"><h4>Most common reasons why health care facilities are not fully functioning</h4>
-		<div id='health_all_health_functioningDIV'><p>All functioning</p></div>
+		<div id='health_all_health_functioningDIV'><p style="color:green">All functioning</p></div>
 		  <div id='health_no_health_facilitiesDIV'><p>No health facilities</p></div>
 		  <div id='health_lack_funds_healthDIV'><p>Lack funds</p></div>
 		  <div id='health_no_elec_healthDIV'><p>Lack of electricity</p></div>
@@ -283,7 +301,7 @@ a:hover{text-decoration: underline;}
     </div>
     <div class="span6">
     <div class="row-fluid"><h4>Most common reasons for reduction in available safe water in village since the conflict began</h4>
-	  <div id='WASH_water_no_reduc_since_conflictDIV'><p>No reduction</br></br></p></div>
+	  <div id='WASH_water_no_reduc_since_conflictDIV'><p style="color:green">No reduction</br></br></p></div>
 	  <div id='WASH_water_system_damaged_since_conflictDIV'><p>Water system damaged</br></br></p></div>
 	  <div id='WASH_water_lack_elec_since_conflictDIV'><p>Lack of electricity</br></br></p></div>
 	  <div id='WASH_water_shortage_chlorine_since_conflictDIV'><p>Lack of chlorine</br></br></p></div>
@@ -312,9 +330,9 @@ a:hover{text-decoration: underline;}
 		  <div id='food_market_pricesDIV'><p></p></div>
 	</div>
 	<div class="row-fluid"><h4>Primary reasons why food is difficult to access</h4>
-		  <div id='food_acc_rzn_noneDIV'><p>No difficulties</br></br></p></div>
+		  <div id='food_acc_rzn_noneDIV'><p style="color:green">No difficulties</br></br></p></div>
 		  <div id='food_acc_rzn_lack_marketDIV'><p>Lack of access </br>to market</p></div>
-		  <div id='food_acc_rzn_lack_ressDIV'><p>lack of resources </br>to buy food</p></div>
+		  <div id='food_acc_rzn_lack_ressDIV'><p>Lack of resources </br>to buy food</p></div>
 		  <div id='food_acc_rzn_type_expenDIV'><p>Some food items </br>are expensive</p></div>
 		  <div id='food_acc_rzn_foodNotAvDIV'><p>Some food items </br>are not available</p></div>
 		  <div id='food_acc_rzn_local_prodDecrDIV'><p>Local production </br>decreased</p></div>
@@ -322,8 +340,8 @@ a:hover{text-decoration: underline;}
 		  <div id='food_acc_rzn_acc_nofuelDIV'><p>Cooking fuel</br>is not possible to access</p></div>
 		 </div>
 	 <div class="row-fluid">
-		  <div id='food_IDPs_foodDIV'><p>% of <strong style="color:#DA4400">IDPs </strong>received food assistance </br>during March 2015</p></div>
-		  <div id='food_pop_food_preconfDIV'><p>% of <strong style="color:#FF9933">pre-conflict population thst</strong> </br>received food assistance during March 2015</p></div>
+		  <div id='food_IDPs_foodDIV'><p>% of <strong style="color:#DA4400">IDPs that </strong>received food assistance </br>during March 2015</p></div>
+		  <div id='food_pop_food_preconfDIV'><p>% of <strong style="color:#FF9933">pre-conflict population </strong> that</br>received food assistance during March 2015</p></div>
 	</div>
 	
 	<div class="row-fluid">  
@@ -451,6 +469,7 @@ a:hover{text-decoration: underline;}
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/dc.js"></script>
+<script type="text/javascript" src="SYR_adm3.json"></script>
 <script type="text/javascript">
 
 function toggle(showHideDiv, switchTextDiv) {
@@ -478,9 +497,22 @@ function togglemap(showHideDiv, switchTextDiv) {
 		text.innerHTML = "<small>Hide map</small>";
 	}
 }
+function togglegov(showHideDiv, switchTextDiv) {
+	var ele = document.getElementById(showHideDiv);
+	var text = document.getElementById(switchTextDiv);
+	if(ele.style.display == "block") {
+    		ele.style.display = "none";
+		text.innerHTML = "<small>Show Governorate</small>";
+  	}
+	else {
+		ele.style.display = "block";
+		text.innerHTML = "<small>Hide Governorate</small>";
+	}
+}
 
 var mapChart          = dc.geoChoroplethChart("#map"),
     map2Chart          = dc.geoChoroplethChart("#map2"),
+    govinsetChart          = dc.rowChart("#govinset"),
     govchart          = dc.rowChart("#governo"),
     Distchart         = dc.rowChart("#distr"),
     SubDistchart      = dc.rowChart("#sub_dist"),
@@ -549,14 +581,17 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 	type_housing_damagedCT   = dc.rowChart("#type_housing_damaged")
 	elec_before_conflictChart       = dc.pieChart("#elec_before_conflict");
 	elec_prev_monthChart       = dc.pieChart("#elec_prev_month");
-	price_butaneCT   = dc.rowChart("#price_butane")
-	price_keroseneCT   = dc.rowChart("#price_kerosene")
-	price_propaneCT   = dc.rowChart("#price_propane")
-	price_roofingCT   = dc.rowChart("#price_roofing")
-	price_coalCT   = dc.rowChart("#price_coal")
-	price_fire_woodCT   = dc.rowChart("#price_fire_wood")
-	price_wood_constrCT   = dc.rowChart("#price_wood_constr")
-	price_cementCT   = dc.rowChart("#price_cement")
+	
+	//price
+	price_butaneCT   = dc.barChart("#price_butane")
+	price_keroseneCT   = dc.barChart("#price_kerosene")
+	price_propaneCT   = dc.barChart("#price_propane")
+	price_roofingCT   = dc.barChart("#price_roofing")
+	price_coalCT   = dc.barChart("#price_coal")
+	price_fire_woodCT   = dc.barChart("#price_fire_wood")
+	price_wood_constrCT   = dc.barChart("#price_wood_constr")
+	price_cementCT   = dc.barChart("#price_cement")
+	
 	NFI_burn_no_lackfuelChart = dc.pieChart('#NFI_burn_no_lackfuelChartDIV')
 	NFI_burn_furn_withoutChart = dc.pieChart('#NFI_burn_furn_withoutDIV')
 	NFI_burn_furn_withChart = dc.pieChart('#NFI_burn_furn_withDIV')
@@ -594,9 +629,10 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 	health_surgeryChart = dc.pieChart('#health_surgeryDIV')
 	health_diabetes_careChart = dc.pieChart('#health_diabetes_careDIV')
 	
-	health_price_antibioCT   = dc.rowChart("#health_price_antibio")
-	health_price_analgesicsCT   = dc.rowChart("#health_price_analgesics")
-	health_price_orsCT   = dc.rowChart("#health_price_ors")
+	health_price_antibioCT   = dc.barChart("#health_price_antibio")
+	health_price_analgesicsCT   = dc.barChart("#health_price_analgesics")
+	health_price_orsCT   = dc.barChart("#health_price_ors")
+	
 	health_ppl_payChart       = dc.pieChart("#health_ppl_pay");
 
 	health_disabilitiesChart = dc.pieChart('#health_disabilitiesDIV')
@@ -641,16 +677,16 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 	WASH_water_other_since_conflictChart = dc.pieChart('#WASH_water_other_since_conflictDIV')
 
 
-	price_soapCT   = dc.rowChart("#price_soap")
-	price_jerrycanCT   = dc.rowChart("#price_jerrycan")
-	price_laundryCT   = dc.rowChart("#price_laundry")
-	price_napkinsCT   = dc.rowChart("#price_napkins")
-	price_diapersCT   = dc.rowChart("#price_diapers")
+	price_soapCT   = dc.barChart("#price_soap")
+	price_jerrycanCT   = dc.barChart("#price_jerrycan")
+	price_laundryCT   = dc.barChart("#price_laundry")
+	price_napkinsCT   = dc.barChart("#price_napkins")
+	price_diapersCT   = dc.barChart("#price_diapers")
 
-	coast_water_networkCT   = dc.rowChart("#coast_water_network")
-	coast_bottled_waterCT   = dc.rowChart("#coast_bottled_water")
-	coast_public_water_truckCT   = dc.rowChart("#coast_public_water_truck")
-	coast_private_water_truckCT   = dc.rowChart("#coast_private_water_truck")
+	coast_water_networkCT   = dc.barChart("#coast_water_network")
+	coast_bottled_waterCT   = dc.barChart("#coast_bottled_water")
+	coast_public_water_truckCT   = dc.barChart("#coast_public_water_truck")
+	coast_private_water_truckCT   = dc.barChart("#coast_private_water_truck")
 
 	water_sourceCT   = dc.rowChart("#water_source")
 	water_statusCT   = dc.rowChart("#water_status")
@@ -679,34 +715,40 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 	food_acc_rzn_acc_nofuelChart = dc.pieChart('#food_acc_rzn_acc_nofuelDIV')
 	food_IDPs_foodChart = dc.rowChart('#food_IDPs_foodDIV')
 	food_pop_food_preconfChart = dc.rowChart('#food_pop_food_preconfDIV')
-	food_avg_riceChart = dc.rowChart('#food_avg_riceDIV')
-	food_avg_goatChart = dc.rowChart('#food_avg_goatDIV')
-	food_avg_chickehChart = dc.rowChart('#food_avg_chickehDIV')
-	food_avg_oilChart = dc.rowChart('#food_avg_oilDIV')
-	food_avg_sugarChart = dc.rowChart('#food_avg_sugarDIV')
-	food_avg_tomatoChart = dc.rowChart('#food_avg_tomatoDIV')
-	food_avg_cucumberChart = dc.rowChart('#food_avg_cucumberDIV')
-	food_avg_bread_privChart = dc.rowChart('#food_avg_bread_privDIV')
-	food_avg_bread_pubChart = dc.rowChart('#food_avg_bread_pubDIV')
-	food_avg_flourChart = dc.rowChart('#food_avg_flourDIV')
-	food_avg_milkChart = dc.rowChart('#food_avg_milkDIV')
-	food_avg_eggChart = dc.rowChart('#food_avg_eggDIV')
-	food_avg_babyChart = dc.rowChart('#food_avg_babyDIV')
-	food_avg_pepsiChart = dc.rowChart('#food_avg_pepsiDIV')
-	food_avgB_riceChart = dc.rowChart('#food_avgB_riceDIV')
-	food_avgB_goatChart = dc.rowChart('#food_avgB_goatDIV')
-	food_avgB_chickehChart = dc.rowChart('#food_avgB_chickehDIV')
-	food_avgB_oilChart = dc.rowChart('#food_avgB_oilDIV')
-	food_avgB_sugarChart = dc.rowChart('#food_avgB_sugarDIV')
-	food_avgB_tomatoChart = dc.rowChart('#food_avgB_tomatoDIV')
-	food_avgB_cucumberChart = dc.rowChart('#food_avgB_cucumberDIV')
-	food_avgB_bread_privChart = dc.rowChart('#food_avgB_bread_privDIV')
-	food_avgB_bread_pubChart = dc.rowChart('#food_avgB_bread_pubDIV')
-	food_avgB_flourChart = dc.rowChart('#food_avgB_flourDIV')
-	food_avgB_milkChart = dc.rowChart('#food_avgB_milkDIV')
-	food_avgB_eggChart = dc.rowChart('#food_avgB_eggDIV')
-	food_avgB_babyChart = dc.rowChart('#food_avgB_babyDIV')
-	food_avgB_pepsiChart = dc.rowChart('#food_avgB_pepsiDIV')
+	
+	
+	//avg
+	food_avg_riceChart = dc.barChart('#food_avg_riceDIV')
+	food_avg_goatChart = dc.barChart('#food_avg_goatDIV')
+	food_avg_chickehChart = dc.barChart('#food_avg_chickehDIV')
+	food_avg_oilChart = dc.barChart('#food_avg_oilDIV')
+	food_avg_sugarChart = dc.barChart('#food_avg_sugarDIV')
+	food_avg_tomatoChart = dc.barChart('#food_avg_tomatoDIV')
+	food_avg_cucumberChart = dc.barChart('#food_avg_cucumberDIV')
+	food_avg_bread_privChart = dc.barChart('#food_avg_bread_privDIV')
+	food_avg_bread_pubChart = dc.barChart('#food_avg_bread_pubDIV')
+	food_avg_flourChart = dc.barChart('#food_avg_flourDIV')
+	food_avg_milkChart = dc.barChart('#food_avg_milkDIV')
+	food_avg_eggChart = dc.barChart('#food_avg_eggDIV')
+	food_avg_babyChart = dc.barChart('#food_avg_babyDIV')
+	food_avg_pepsiChart = dc.barChart('#food_avg_pepsiDIV')
+	food_avgB_riceChart = dc.barChart('#food_avgB_riceDIV')
+	food_avgB_goatChart = dc.barChart('#food_avgB_goatDIV')
+	food_avgB_chickehChart = dc.barChart('#food_avgB_chickehDIV')
+	food_avgB_oilChart = dc.barChart('#food_avgB_oilDIV')
+	food_avgB_sugarChart = dc.barChart('#food_avgB_sugarDIV')
+	food_avgB_tomatoChart = dc.barChart('#food_avgB_tomatoDIV')
+	food_avgB_cucumberChart = dc.barChart('#food_avgB_cucumberDIV')
+	food_avgB_bread_privChart = dc.barChart('#food_avgB_bread_privDIV')
+	food_avgB_bread_pubChart = dc.barChart('#food_avgB_bread_pubDIV')
+	food_avgB_flourChart = dc.barChart('#food_avgB_flourDIV')
+	food_avgB_milkChart = dc.barChart('#food_avgB_milkDIV')
+	food_avgB_eggChart = dc.barChart('#food_avgB_eggDIV')
+	food_avgB_babyChart = dc.barChart('#food_avgB_babyDIV')
+	food_avgB_pepsiChart = dc.barChart('#food_avgB_pepsiDIV')
+	//avg
+	
+	
 	food__bread_sourceChart = dc.rowChart('#food__bread_sourceDIV')
 	food__day_nobreadprivChart = dc.rowChart('#food__day_nobreadprivDIV')
 	food__day_nobreadpubChart = dc.rowChart('#food__day_nobreadpubDIV')
@@ -767,7 +809,7 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 	Educ_otherChart = dc.pieChart('#Educ_otherDIV')
 
 	
-d3.csv("AoO_dashboard_anom.csv", function(error, experiments) {
+d3.csv("AoO_dashboard.csv", function(error, experiments) {
 
 experiments.forEach(function(x) {
     x.CONFID_Displacement = +x.CONFID_Displacement;
@@ -779,6 +821,13 @@ experiments.forEach(function(x) {
     x.CONFID_Shelter = +x.CONFID_Shelter;
     x.CONFID_WASH = +x.CONFID_WASH;
 });
+
+
+
+////////////colorfunction
+var testcolor = d3.scale.ordinal()
+    .domain(["foo", "bar", "baz"])
+     .range(["#9B9DA1","#E64143","#F2A0A1","#D3CAB7","#A7A9AC","#E3E4E5","#E7E2D6","#E64143","#F2A0A1","#D3CAB7","#A7A9AC","#E3E4E5","#E7E2D6"]);
   
 
   var ndx               = crossfilter(experiments),
@@ -968,6 +1017,8 @@ experiments.forEach(function(x) {
       subDistMapGroup   = subDistMapDim.group(),
 	  subDistMap2Dim     = ndx.dimension(function(d) {return [d.GEO_Subdistrict_Assessed_location];}),
       subDistMap2Group   = subDistMap2Dim.group(),
+	  mapgovDim            = ndx.dimension(function(d) {return d["GEO_Governorate_Assessed_location"];}),
+      mapgovGroup          = mapgovDim.group().reduceCount(),	
       subDistDimension  = ndx.dimension(function(d) {return d.GEO_Subdistrict_Assessed_location;}),
       subDistGroup      = subDistDimension.group(),
       DistDim           = ndx.dimension(function(d) {return d["GEO_District_Assessed_location"];}),
@@ -1082,21 +1133,23 @@ experiments.forEach(function(x) {
 	  elec_prev_monthDim          = ndx.dimension(function (d) {  return d["NFI/Q3_2_source_electricity_used_most_hours_pre_m"];});
 	  elec_prev_monthGroup        = elec_prev_monthDim.group();
 
-	  price_butaneDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_1_Butane_gas_1_Cannister_avg_price"];}),
+
+///price
+	  price_butaneDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_1_Butane_gas_1_Cannister_avg_price"]/1000);}),
       price_butaneGP    = price_butaneDim.group();
-	  price_keroseneDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_2_Kerosene_1_Llitre_avg_price"];}),
+	  price_keroseneDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_2_Kerosene_1_Llitre_avg_price"]/100);}),
       price_keroseneGP    = price_keroseneDim.group();
-	  price_propaneDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_3_Propane_1_Cannister_avg_price"];}),
+	  price_propaneDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_3_Propane_1_Cannister_avg_price"]/1000);}),
       price_propaneGP    = price_propaneDim.group();
-	  price_roofingDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_8_iron_sheets_for_roofing_3_2meters_avg_price"];}),
+	  price_roofingDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_8_iron_sheets_for_roofing_3_2meters_avg_price"]/1000);}),
       price_roofingGP    = price_roofingDim.group();
-	  price_coalDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_1_Butane_gas_1_Cannister_avg_price"];}),
+	  price_coalDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_1_Butane_gas_1_Cannister_avg_price"]/1000);}),
       price_coalGP    = price_coalDim.group();
-	  price_fire_woodDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_5_Fire_Wood_1_tonne_avg_price"];}),
+	  price_fire_woodDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_5_Fire_Wood_1_tonne_avg_price"]/10000);}),
       price_fire_woodGP    = price_fire_woodDim.group();
-	  price_wood_constrDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_6_Wood_for_construction_1_metre_avg_price"];}),
+	  price_wood_constrDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_6_Wood_for_construction_1_metre_avg_price"]/1000);}),
       price_wood_constrGP    = price_wood_constrDim.group();
-	  price_cementDim      = ndx.dimension(function (d) { return d["NFI/Q3_3_7_Cement_50_KG_avg_price"];}),
+	  price_cementDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_7_Cement_50_KG_avg_price"]/1000);}),
       price_cementGP    = price_cementDim.group();
 
 		NFI_burn_no_lackfuelDim = ndx.dimension(function(d) {return d['NFI/Q3_4_most_coping_strategies_pre_m_lack_of_fuel/no_lack_of_fuel'];});	NFI_burn_no_lackfuelGP = NFI_burn_no_lackfuelDim.group();
@@ -1148,13 +1201,13 @@ experiments.forEach(function(x) {
 
 	  
 	  
-	  health_price_antibioDim      = ndx.dimension(function (d) { return d["Health/Q4_5_1_Antibiotics_cost_on_avg"];}),
+	  health_price_antibioDim      = ndx.dimension(function (d)   {return Math.floor(d["Health/Q4_5_1_Antibiotics_cost_on_avg"]/200); })
       health_price_antibioGP    = health_price_antibioDim.group();
-	  health_price_analgesicsDim      = ndx.dimension(function (d) { return d["Health/Q4_5_2_Analgesics_painkillers_cost_on_avg"];}),
+	  health_price_analgesicsDim      = ndx.dimension(function (d)   {return Math.floor(d["Health/Q4_5_2_Analgesics_painkillers_cost_on_avg"]/200); })
       health_price_analgesicsGP    = health_price_analgesicsDim.group();
-	  health_price_orsDim      = ndx.dimension(function (d) { return d["Health/Q4_5_3_Oral_Rehydration_Salts_ORS_cost_on_avg"];}),
+	  health_price_orsDim      = ndx.dimension(function (d)   {return Math.floor(d["Health/Q4_5_3_Oral_Rehydration_Salts_ORS_cost_on_avg"]/200); })
       health_price_orsGP    = health_price_orsDim.group();
-	  health_ppl_payDim      = ndx.dimension(function (d) { return d["Health/Q4_6_people_pay_for_consultations_treatment_and_drugs"];}),
+	  health_ppl_payDim      = ndx.dimension(function (d)   {return d["Health/Q4_6_people_pay_for_consultations_treatment_and_drugs"]; })
       health_ppl_payGP    = health_ppl_payDim.group();
 
 	health_disabilitiesDim = ndx.dimension(function(d) {return d['Health/Q4_7_most_health_problems_reported_pre_m/Disabilities'];});	health_disabilitiesGP = health_disabilitiesDim.group();
@@ -1199,23 +1252,23 @@ experiments.forEach(function(x) {
 	WASH_water_not_sure_since_conflictDim = ndx.dimension(function(d) {return d['WASH/Q5_8_rzn_reduction_volume_safe_water_since_conf/not_sure'];});	WASH_water_not_sure_since_conflictGP = WASH_water_not_sure_since_conflictDim.group();
 
 
-	  price_soapDim      = ndx.dimension(function (d) { return d["WASH/Q5_1_1_Soap_one_bar_avg_price_pre_m"];}),
+	  price_soapDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_1_1_Soap_one_bar_avg_price_pre_m"]/100);}),
       price_soapGP    = price_soapDim.group();
-	  price_jerrycanDim      = ndx.dimension(function (d) { return d["WASH/Q5_1_2_Jerry_can_avg_price_pre_m"];}),
+	  price_jerrycanDim      = ndx.dimension(function (d)  {return Math.floor(d["WASH/Q5_1_2_Jerry_can_avg_price_pre_m"]/100);}),
       price_jerrycanGP    = price_jerrycanDim.group();
-	  price_laundryDim      = ndx.dimension(function (d) { return d["WASH/Q5_1_3_Laundry_powder_1KG_avg_price_pre_m"];}),
+	  price_laundryDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_1_3_Laundry_powder_1KG_avg_price_pre_m"]/100);}),
       price_laundryGP    = price_laundryDim.group();
-	  price_napkinsDim      = ndx.dimension(function (d) { return d["WASH/Q5_1_4_Sanitary_napkins_1pack_of9_avg_price_pre_m"];}),
+	  price_napkinsDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_1_4_Sanitary_napkins_1pack_of9_avg_price_pre_m"]/100);}),
       price_napkinsGP    = price_napkinsDim.group();
-	  price_diapersDim      = ndx.dimension(function (d) { return d["WASH/Q5_1_5_Disposable_diapers_1KG_avg_price_pre_m"];}),
+	  price_diapersDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_1_5_Disposable_diapers_1KG_avg_price_pre_m"]/100);}),
       price_diapersGP    = price_diapersDim.group();
-	  coast_water_networkDim      = ndx.dimension(function (d) { return d["WASH/Q5_2_Water_network_cubic_cost_pre_m"];}),
+	  coast_water_networkDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_Water_network_cubic_cost_pre_m"]/100);}),
       coast_water_networkGP    = coast_water_networkDim.group();
-	  coast_bottled_waterDim      = ndx.dimension(function (d) { return d["WASH/Q5_2_3_Bottled_water_litre_avg_cost_pre_m"];}),
+	  coast_bottled_waterDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_3_Bottled_water_litre_avg_cost_pre_m"]/100);}),
       coast_bottled_waterGP    = coast_bottled_waterDim.group();
-	  coast_public_water_truckDim      = ndx.dimension(function (d) { return d["WASH/Q5_2_2_Water_trucking_public_subsidised_cubic_cost_pre_m"];}),
+	  coast_public_water_truckDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_2_Water_trucking_public_subsidised_cubic_cost_pre_m"]/100);}),
       coast_public_water_truckGP    = coast_public_water_truckDim.group();
-	  coast_private_water_truckDim      = ndx.dimension(function (d) { return d["WASH/Q5_2_1_Water_trucking_private_cubic_cost_pre_m"];}),
+	  coast_private_water_truckDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_1_Water_trucking_private_cubic_cost_pre_m"]/1000);}),
       coast_private_water_truckGP    = coast_private_water_truckDim.group();
 	  water_sourceDim      = ndx.dimension(function (d) { return d["WASH/Q5_3_most_drinking_water_source_accessed_pre_m"];}),
       water_sourceGP    = water_sourceDim.group();
@@ -1228,6 +1281,8 @@ experiments.forEach(function(x) {
 
 	
 	///////////////Food
+	
+	//avg
 	food_obt_barteningDim = ndx.dimension(function(d) {return d['Food_Security/Q6_1_How_people_obtain_food_pre_m/Bartering'];});	food_obt_barteningGP = food_obt_barteningDim.group();
 	food_obt_purchasedDim = ndx.dimension(function(d) {return d['Food_Security/Q6_1_How_people_obtain_food_pre_m/Purchased'];});	food_obt_purchasedGP = food_obt_purchasedDim.group();
 	food_obt_own_producDim = ndx.dimension(function(d) {return d['Food_Security/Q6_1_How_people_obtain_food_pre_m/Own_production'];});	food_obt_own_producGP = food_obt_own_producDim.group();
@@ -1244,34 +1299,39 @@ experiments.forEach(function(x) {
 	food_acc_rzn_acc_nofuelDim = ndx.dimension(function(d) {return d['Food_Security/Q6_3_rzn_difficulties_access_enough_food_pre_m/lack_of_access_to_available_cooking_fuel'];});	food_acc_rzn_acc_nofuelGP = food_acc_rzn_acc_nofuelDim.group();
 	food_IDPs_foodDim = ndx.dimension(function(d) {return d['Food_Security/Q6_4_num_of_IDPs_received_food_assistance_pre_m'];});	food_IDPs_foodGP = food_IDPs_foodDim.group();
 	food_pop_food_preconfDim = ndx.dimension(function(d) {return d['Food_Security/Q6_5_num_Pre_conf_popul_receive_food_assist_pre_m'];});	food_pop_food_preconfGP = food_pop_food_preconfDim.group();
-	food_avg_riceDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_1_Rice_1KG_avg_price_pre_m'];});	food_avg_riceGP = food_avg_riceDim.group();
-	food_avg_goatDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_2_goat_1KG_avg_price_pre_m'];});	food_avg_goatGP = food_avg_goatDim.group();
-	food_avg_chickehDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_3_chicken_1KG_avg_price_pre_m'];});	food_avg_chickehGP = food_avg_chickehDim.group();
-	food_avg_oilDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_4_cooking_oil_1_Litre_avg_price_pre_m'];});	food_avg_oilGP = food_avg_oilDim.group();
-	food_avg_sugarDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_5_sugar_1KG_avg_price_pre_m'];});	food_avg_sugarGP = food_avg_sugarDim.group();
-	food_avg_tomatoDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_6_tomato_1KG_avg_price_pre_m'];});	food_avg_tomatoGP = food_avg_tomatoDim.group();
-	food_avg_cucumberDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_7_cucumber_1KG_avg_price_pre_m'];});	food_avg_cucumberGP = food_avg_cucumberDim.group();
-	food_avg_bread_privDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_8_bread_public_1_pack_avg_price_pre_m'];});	food_avg_bread_privGP = food_avg_bread_privDim.group();
-	food_avg_bread_pubDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_9_bread_private_1_pack_avg_price_pre_m'];});	food_avg_bread_pubGP = food_avg_bread_pubDim.group();
-	food_avg_flourDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_10_flour_1KG_avg_price_pre_m'];});	food_avg_flourGP = food_avg_flourDim.group();
-	food_avg_milkDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_11_milk_1_Litre_avg_price_pre_m'];});	food_avg_milkGP = food_avg_milkDim.group();
-	food_avg_eggDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_12_eggs_1_avg_price_pre_m'];});	food_avg_eggGP = food_avg_eggDim.group();
-	food_avg_babyDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_13_Baby_formula_1KG_avg_price_pre_m'];});	food_avg_babyGP = food_avg_babyDim.group();
-	food_avg_pepsiDim = ndx.dimension(function(d) {return d['Food_Security/Q6_6_14_Pepsi_1_Litre_avg_price_pre_m'];});	food_avg_pepsiGP = food_avg_pepsiDim.group();
-	food_avgB_riceDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_1_Rice_1KG_avg_price_bfr_conf'];});	food_avgB_riceGP = food_avgB_riceDim.group();
-	food_avgB_goatDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_2_goat_1KG_avg_price_bfr_conf'];});	food_avgB_goatGP = food_avgB_goatDim.group();
-	food_avgB_chickehDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_3_chicken_1KG_avg_price_bfr_conf'];});	food_avgB_chickehGP = food_avgB_chickehDim.group();
-	food_avgB_oilDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_4_cooking_oil_1_Litre_avg_price_bfr_conf'];});	food_avgB_oilGP = food_avgB_oilDim.group();
-	food_avgB_sugarDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_5_sugar_1KG_avg_price_bfr_conf'];});	food_avgB_sugarGP = food_avgB_sugarDim.group();
-	food_avgB_tomatoDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_6_tomato_1KG_avg_price_bfr_conf'];});	food_avgB_tomatoGP = food_avgB_tomatoDim.group();
-	food_avgB_cucumberDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_7_cucumber_1KG_avg_price_bfr_conf'];});	food_avgB_cucumberGP = food_avgB_cucumberDim.group();
-	food_avgB_bread_privDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_8_bread_public_1_pack_avg_price_bfr_conf'];});	food_avgB_bread_privGP = food_avgB_bread_privDim.group();
-	food_avgB_bread_pubDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_9_bread_private_1_pack_avg_price_bfr_conf'];});	food_avgB_bread_pubGP = food_avgB_bread_pubDim.group();
-	food_avgB_flourDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_10_flour_1KG_avg_price_bfr_conf'];});	food_avgB_flourGP = food_avgB_flourDim.group();
-	food_avgB_milkDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_11_milk_1_Litre_avg_price_bfr_conf'];});	food_avgB_milkGP = food_avgB_milkDim.group();
-	food_avgB_eggDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_12_eggs_1_avg_price_bfr_conf'];});	food_avgB_eggGP = food_avgB_eggDim.group();
-	food_avgB_babyDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_13_Baby_formula_1KG_avg_price_bfr_conf'];});	food_avgB_babyGP = food_avgB_babyDim.group();
-	food_avgB_pepsiDim = ndx.dimension(function(d) {return d['Food_Security/Q6_7_14_Pepsi_1_Litre_avg_price_bfr_conf'];});	food_avgB_pepsiGP = food_avgB_pepsiDim.group();
+	
+	
+	food_avg_riceDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_1_Rice_1KG_avg_price_pre_m']/150); });	food_avg_riceGP = food_avg_riceDim.group();
+	food_avg_goatDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_2_goat_1KG_avg_price_pre_m']/500); });	food_avg_goatGP = food_avg_goatDim.group();
+	food_avg_chickehDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_3_chicken_1KG_avg_price_pre_m']/150); });	food_avg_chickehGP = food_avg_chickehDim.group();
+	food_avg_oilDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_4_cooking_oil_1_Litre_avg_price_pre_m']/150); });	food_avg_oilGP = food_avg_oilDim.group();
+	food_avg_sugarDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_5_sugar_1KG_avg_price_pre_m']/50); });	food_avg_sugarGP = food_avg_sugarDim.group();
+	food_avg_tomatoDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_6_tomato_1KG_avg_price_pre_m']/50); });	food_avg_tomatoGP = food_avg_tomatoDim.group();
+	food_avg_cucumberDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_7_cucumber_1KG_avg_price_pre_m']/50); });	food_avg_cucumberGP = food_avg_cucumberDim.group();
+	food_avg_bread_privDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_8_bread_public_1_pack_avg_price_pre_m']/50); });	food_avg_bread_privGP = food_avg_bread_privDim.group();
+	food_avg_bread_pubDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_9_bread_private_1_pack_avg_price_pre_m']/50); });	food_avg_bread_pubGP = food_avg_bread_pubDim.group();
+	food_avg_flourDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_10_flour_1KG_avg_price_pre_m']/50); });	food_avg_flourGP = food_avg_flourDim.group();
+	food_avg_milkDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_11_milk_1_Litre_avg_price_pre_m']/50); });	food_avg_milkGP = food_avg_milkDim.group();
+	food_avg_eggDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_12_eggs_1_avg_price_pre_m']/20); });	food_avg_eggGP = food_avg_eggDim.group();
+	food_avg_babyDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_13_Baby_formula_1KG_avg_price_pre_m']/200); });	food_avg_babyGP = food_avg_babyDim.group();
+	food_avg_pepsiDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_6_14_Pepsi_1_Litre_avg_price_pre_m']/50); });	food_avg_pepsiGP = food_avg_pepsiDim.group();
+	food_avgB_riceDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_1_Rice_1KG_avg_price_bfr_conf']/150); });	food_avgB_riceGP = food_avgB_riceDim.group();
+	food_avgB_goatDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_2_goat_1KG_avg_price_bfr_conf']/500); });	food_avgB_goatGP = food_avgB_goatDim.group();
+	food_avgB_chickehDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_3_chicken_1KG_avg_price_bfr_conf']/150); });	food_avgB_chickehGP = food_avgB_chickehDim.group();
+	food_avgB_oilDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_4_cooking_oil_1_Litre_avg_price_bfr_conf']/150); });	food_avgB_oilGP = food_avgB_oilDim.group();
+	food_avgB_sugarDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_5_sugar_1KG_avg_price_bfr_conf']/50); });	food_avgB_sugarGP = food_avgB_sugarDim.group();
+	food_avgB_tomatoDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_6_tomato_1KG_avg_price_bfr_conf']/50); });	food_avgB_tomatoGP = food_avgB_tomatoDim.group();
+	food_avgB_cucumberDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_7_cucumber_1KG_avg_price_bfr_conf']/50); });	food_avgB_cucumberGP = food_avgB_cucumberDim.group();
+	food_avgB_bread_privDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_8_bread_public_1_pack_avg_price_bfr_conf']/50); });	food_avgB_bread_privGP = food_avgB_bread_privDim.group();
+	food_avgB_bread_pubDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_9_bread_private_1_pack_avg_price_bfr_conf']/50); });	food_avgB_bread_pubGP = food_avgB_bread_pubDim.group();
+	food_avgB_flourDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_10_flour_1KG_avg_price_bfr_conf']/50); });	food_avgB_flourGP = food_avgB_flourDim.group();
+	food_avgB_milkDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_11_milk_1_Litre_avg_price_bfr_conf']/50); });	food_avgB_milkGP = food_avgB_milkDim.group();
+	food_avgB_eggDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_12_eggs_1_avg_price_bfr_conf']/20); });	food_avgB_eggGP = food_avgB_eggDim.group();
+	food_avgB_babyDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_13_Baby_formula_1KG_avg_price_bfr_conf']/200); });	food_avgB_babyGP = food_avgB_babyDim.group();
+	food_avgB_pepsiDim = ndx.dimension(function(d) {return Math.floor(d['Food_Security/Q6_7_14_Pepsi_1_Litre_avg_price_bfr_conf']/50); });	food_avgB_pepsiGP = food_avgB_pepsiDim.group();
+//avg
+
+
 	food__bread_sourceDim = ndx.dimension(function(d) {return d['Food_Security/Q6_8_most_source_of_bread_accessed_by_pre_m'];});	food__bread_sourceGP = food__bread_sourceDim.group();
 	food__day_nobreadprivDim = ndx.dimension(function(d) {return d['Food_Security/Q6_9_days_prev_m_bread_NOT_avail_buy_from_pub_bakery'];});	food__day_nobreadprivGP = food__day_nobreadprivDim.group();
 	food__day_nobreadpubDim = ndx.dimension(function(d) {return d['Food_Security/Q6_10_days_prev_m_bread_NOT_avail_buy_from_priv_bakery'];});	food__day_nobreadpubGP = food__day_nobreadpubDim.group();
@@ -1346,10 +1406,19 @@ experiments.forEach(function(x) {
 	dc.dataCount("#count-info")
                     .dimension(ndx)
                     .group(all);
+					
+	//var data; // a global
+//var syr = $.get( "SYR_adm3.json", function() {
+//  alert( "Load was performed." );
+//});
       
-d3.json("grid.json", function (statesJson) {
+d3.json( "SYR_adm3.json",  function (statesJson) {
+ //if (error) return console.warn(error);
+ //data = statesJson;
+ //visualizeit();
+  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  mapChart.width(720)
+   mapChart.width(720)
           .height(550)
           .dimension(subDistMapDim)
           .group(subDistMapGroup)
@@ -1357,10 +1426,10 @@ d3.json("grid.json", function (statesJson) {
           .colorDomain([0, 5])
           .colorCalculator(function (d) { return d ? mapChart.colors()(d) : '#ccc'; })
           .overlayGeoJson(statesJson.features, "state", function (d) {
-              return d.properties.PageName;
+              return d.properties.Nahya_EN;
           })
           .projection(d3.geo.equirectangular().center([40.2,35]).scale(6000))
-          .label(function(d) { return d.features.properties.PageName;})
+          .label(function(d) { return d.features.properties.Nahya_EN;})
 		  .title(function (d) {
               return "Subdistrict " + d.key + ": " +d.value+ " villages assessed";
           })
@@ -1373,14 +1442,31 @@ d3.json("grid.json", function (statesJson) {
           .colorDomain([0, 5])
           .colorCalculator(function (d) { return d ? mapChart.colors()(d) : '#ccc'; })
           .overlayGeoJson(statesJson.features, "state", function (d) {
-              return d.properties.PageName;
+              return d.properties.Nahya_EN;
           })
-          .projection(d3.geo.equirectangular().center([51,29]).scale(1800))
-          .label(function(d) { return d.features.properties.PageName;})
+          .projection(d3.geo.equirectangular().center([52,29]).scale(1650))
+          .label(function(d) { return d.features.properties.Nahya_EN;})
 		  .title(function (d) {
               return "Subdistrict " + d.key + ": " +d.value+ " villages assessed";
           })
 		;
+		
+	 govinsetChart
+	  .width(200)
+      .height(300)
+     // .slicesCap(4)
+      .dimension(mapgovDim)
+      .group(mapgovGroup)
+          .elasticX(true)
+          .renderLabel(true)
+          .colors(['#8C8C8C'])
+          .colorDomain([0,0])
+          .colorAccessor(function(d, i){return 1;})
+          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		;
+		
+	
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////confidence	
 
@@ -1470,7 +1556,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -1488,7 +1574,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -1504,7 +1590,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -1521,7 +1607,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		////.ordering(function (p) { return -p.value;})
         .elasticX(true)
         .renderLabel(true)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
         .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -1538,7 +1624,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -1555,7 +1641,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		///.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		  
 		  ;
@@ -1564,47 +1650,47 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 	syrianCT
         .dimension(syrianDim)
         .group(syrianGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
+	   .colors(testcolor)
+	   .legend(dc.legend())
 		;
 		
 		iraqi_nationalsCT
         .dimension(iraqi_nationalsDim)
         .group(iraqi_nationalsGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})              
+		////////////filter///////////////     
        .innerRadius(20)
-	    .colors(d3.scale.category20c())
+	    .colors(testcolor)
 		;
 		
 		palestiniansCT
         .dimension(palestiniansDim)
         .group(palestiniansGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
 		;
 		
 		other_foreign_nationalsCT
         .dimension(other_foreign_nationalsDim)
         .group(other_foreign_nationalsGP)
-       .width(145)
+       .width(175)
         .height(80) 
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		
@@ -1612,277 +1698,277 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		employmentCT
         .dimension(employmentDim)
         .group(employmentGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		familyCT
         .dimension(familyDim)
         .group(familyGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		accessibleCT
         .dimension(accessibleDim)
         .group(accessibleGP)
-       .width(145)
+       .width(175)
         .height(80) 
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		protect_assetsCT
         .dimension(protect_assetsDim)
         .group(protect_assetsGP)
-       .width(145)
+       .width(175)
         .height(80)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		cannot_physicallyCT
         .dimension(cannot_physicallyDim)
         .group(cannot_physicallyGP)
-       .width(145)
+       .width(175)
         .height(80) 
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 	     no_moneyCT
         .dimension(no_moneyDim)
         .group(no_moneyGP)
-       .width(145)
+       .width(175)
         .height(80)        
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		transitCT
         .dimension(transitDim)
         .group(transitGP)
-       .width(145)
+       .width(175)
         .height(80)        
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		other_rznCT
         .dimension(other_rznDim)
         .group(other_rznGP)
-       .width(145)
+       .width(175)
         .height(80)        
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		employment_pre_conf_popCT
         .dimension(employment_pre_conf_popDim)
         .group(employment_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		family_pre_conf_popCT
         .dimension(family_pre_conf_popDim)
         .group(family_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		accessible_pre_conf_popCT
         .dimension(accessible_pre_conf_popDim)
         .group(accessible_pre_conf_popGP)
-        .width(145)
+        .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		;
 		
 		protect_assets_pre_conf_popCT
         .dimension(protect_assets_pre_conf_popDim)
         .group(protect_assets_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		cannot_physically_pre_conf_popCT
         .dimension(cannot_physically_pre_conf_popDim)
         .group(cannot_physically_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 	     no_money_pre_conf_popCT
         .dimension(no_money_pre_conf_popDim)
         .group(no_money_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		transit_pre_conf_popCT
         .dimension(transit_pre_conf_popDim)
         .group(transit_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		other_rzn_pre_conf_popCT
         .dimension(other_rzn_pre_conf_popDim)
         .group(other_rzn_pre_conf_popGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		escal_conflictCT
         .dimension(escal_conflictDim)
         .group(escal_conflictGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		access_moneyCT
         .dimension(access_moneyDim)
         .group(access_moneyGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		loss_incomeCT
         .dimension(loss_incomeDim)
         .group(loss_incomeGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		loss_assetsCT
         .dimension(loss_assetsDim)
         .group(loss_assetsGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		opening_borderCT
         .dimension(opening_borderDim)
         .group(opening_borderGP)
-       .width(145)
+       .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 	     reduce_access_servicesCT
         .dimension(reduce_access_servicesDim)
         .group(reduce_access_servicesGP)
-        .width(145)
+        .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		fear_arrestCT
         .dimension(fear_arrestDim)
         .group(fear_arrestGP)
-        .width(145)
+        .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
         .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 		
 		other_rzn_leaveCT
         .dimension(other_rzn_leaveDim)
         .group(other_rzn_leaveGP)
-        .width(145)
+        .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
        .innerRadius(20)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
 		
 		;
 				
@@ -1899,7 +1985,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -1915,7 +2001,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -1931,7 +2017,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 //////////////////////NFI
@@ -1941,12 +2027,11 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .innerRadius(50)
         .dimension(elec_before_conflictDim)
-        .group(elec_before_conflictGroup);
+        .group(elec_before_conflictGroup)
+		.colors(testcolor)
 		;
 		
 		elec_prev_monthChart
@@ -1954,31 +2039,29 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .innerRadius(50)
         .dimension(elec_prev_monthDim)
-        .group(elec_prev_monthGroup);
+        .group(elec_prev_monthGroup)
+		.colors(testcolor)
 		;
 		
 		price_butaneCT
-        .width(250)
+		 .width(250)
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_butaneDim)
         .group(price_butaneGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([1,11]))
+		.outerPadding(0.3)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d +"K" })
 		;
 		
 		price_keroseneCT
@@ -1986,18 +2069,17 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_keroseneDim)
         .group(price_keroseneGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,12]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(6).tickFormat(function(d) {return d*100})
 		;
 		
 		price_propaneCT
@@ -2005,18 +2087,17 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_propaneDim)
         .group(price_propaneGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([0,20]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d+"K"})
 		;
 		
 		price_roofingCT
@@ -2024,18 +2105,17 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_roofingDim)
         .group(price_roofingGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
 		;
 		
 		price_coalCT
@@ -2043,18 +2123,17 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_coalDim)
         .group(price_coalGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,20]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
 		;
 		
 		price_fire_woodCT
@@ -2062,18 +2141,17 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_fire_woodDim)
         .group(price_fire_woodGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
 		;
 		
 		price_wood_constrCT
@@ -2081,18 +2159,18 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_wood_constrDim)
         .group(price_wood_constrGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	   .colors(testcolor)
+	   .brushOn(false)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d+"K"})
 		;
 		
 		price_cementCT
@@ -2100,115 +2178,105 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_cementDim)
         .group(price_cementGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
 		;
 		
 NFI_burn_no_lackfuelChart
         .dimension(NFI_burn_no_lackfuelDim)
         .group(NFI_burn_no_lackfuelGP) 
-         .width(145)
+         .width(175)
         .height(80)        			
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
         .renderLabel(true);
 		
 NFI_burn_furn_withoutChart
         .dimension(NFI_burn_furn_withoutDim)
         .group(NFI_burn_furn_withoutGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_burn_furn_withChart
         .dimension(NFI_burn_furn_withDim)
         .group(NFI_burn_furn_withGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_burn_agr_apparelChart
         .dimension(NFI_burn_agr_apparelDim)
         .group(NFI_burn_agr_apparelGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_burn_clothesChart
         .dimension(NFI_burn_clothesDim)
         .group(NFI_burn_clothesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_burn_plascticsChart
         .dimension(NFI_burn_plascticsDim)
         .group(NFI_burn_plascticsGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_burn_wasteChart
         .dimension(NFI_burn_wasteDim)
         .group(NFI_burn_wasteGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 NFI_lack_fuel_otherChart
         .dimension(NFI_lack_fuel_otherDim)
         .group(NFI_lack_fuel_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
+		.colors(testcolor)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
     .innerRadius(20)
         .renderLabel(true);
 
@@ -2229,7 +2297,7 @@ NFI_lack_fuel_otherChart
 			})
         .elasticX(true)
         .renderLabel(true)
-        .colors(d3.scale.category20c())
+         .colors(testcolor)
         .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -2250,7 +2318,7 @@ NFI_lack_fuel_otherChart
 			})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		primary_health_centreCT
@@ -2269,7 +2337,7 @@ NFI_lack_fuel_otherChart
 			})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		mobile_clinicCT
@@ -2288,7 +2356,7 @@ NFI_lack_fuel_otherChart
 			})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		private_clinicCT
@@ -2296,9 +2364,7 @@ NFI_lack_fuel_otherChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(private_clinicDim)
         .group(private_clinicGP)
@@ -2306,7 +2372,7 @@ NFI_lack_fuel_otherChart
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -2315,9 +2381,7 @@ NFI_lack_fuel_otherChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(rzn_not_access_healthDim)
         .group(rzn_not_access_healthGP)
@@ -2325,171 +2389,189 @@ NFI_lack_fuel_otherChart
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-         .colors(d3.scale.category20c())
+          .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
 health_all_health_functioningChart
         .dimension(health_all_health_functioningDim)
         .group(health_all_health_functioningGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_health_facilitiesChart
         .dimension(health_no_health_facilitiesDim)
         .group(health_no_health_facilitiesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_lack_funds_healthChart
         .dimension(health_lack_funds_healthDim)
         .group(health_lack_funds_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_elec_healthChart
         .dimension(health_no_elec_healthDim)
         .group(health_no_elec_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_medecineChart
         .dimension(health_no_medecineDim)
         .group(health_no_medecineGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_water_healthChart
         .dimension(health_no_water_healthDim)
         .group(health_no_water_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_equipement_healthChart
         .dimension(health_no_equipement_healthDim)
         .group(health_no_equipement_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_medical_staffChart
         .dimension(health_no_medical_staffDim)
         .group(health_no_medical_staffGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_no_female_staffChart
         .dimension(health_no_female_staffDim)
         .group(health_no_female_staffGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_facilities_damagedChart
         .dimension(health_facilities_damagedDim)
         .group(health_facilities_damagedGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_sed_alternative_healthChart
         .dimension(health_sed_alternative_healthDim)
         .group(health_sed_alternative_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_other_healthChart
         .dimension(health_other_healthDim)
         .group(health_other_healthGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_child_immunizationChart
         .dimension(health_child_immunizationDim)
         .group(health_child_immunizationGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_diarrhea_managementChart
         .dimension(health_diarrhea_managementDim)
         .group(health_diarrhea_managementGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_emergency_careChart
         .dimension(health_emergency_careDim)
         .group(health_emergency_careGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_skilled_careChart
         .dimension(health_skilled_careDim)
         .group(health_skilled_careGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_surgeryChart
         .dimension(health_surgeryDim)
         .group(health_surgeryGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_diabetes_careChart
         .dimension(health_diabetes_careDim)
         .group(health_diabetes_careGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 
 
@@ -2499,54 +2581,51 @@ health_diabetes_careChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_antibioDim)
         .group(health_price_antibioGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*200})
 		;
 		health_price_analgesicsCT
         .width(250)
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_analgesicsDim)
         .group(health_price_analgesicsGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*200})
 		;
 		health_price_orsCT
         .width(250)
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_orsDim)
         .group(health_price_orsGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-         .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		   .colors(testcolor)
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*200})
 		;
 	
 		health_ppl_payChart
@@ -2554,156 +2633,171 @@ health_diabetes_careChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .innerRadius(50)
+		.colors(testcolor)
         .dimension(health_ppl_payDim)
         .group(health_ppl_payGP);
 		;
 health_disabilitiesChart
         .dimension(health_disabilitiesDim)
         .group(health_disabilitiesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_diarrheaChart
         .dimension(health_diarrheaDim)
         .group(health_diarrheaGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_skin_diseaseChart
         .dimension(health_skin_diseaseDim)
         .group(health_skin_diseaseGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_leichmaniasisChart
         .dimension(health_leichmaniasisDim)
         .group(health_leichmaniasisGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_measlesChart
         .dimension(health_measlesDim)
         .group(health_measlesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_communicable_diseasesChart
         .dimension(health_communicable_diseasesDim)
         .group(health_communicable_diseasesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_chronic_diseasesChart
         .dimension(health_chronic_diseasesDim)
         .group(health_chronic_diseasesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_maternal_health_issuesChart
         .dimension(health_maternal_health_issuesDim)
         .group(health_maternal_health_issuesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_injuriesChart
         .dimension(health_injuriesDim)
         .group(health_injuriesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_respiratory_infectChart
         .dimension(health_respiratory_infectDim)
         .group(health_respiratory_infectGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_feverChart
         .dimension(health_feverDim)
         .group(health_feverGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_polioChart
         .dimension(health_polioDim)
         .group(health_polioGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_malnutritionChart
         .dimension(health_malnutritionDim)
         .group(health_malnutritionGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_severe_less_5Chart
         .dimension(health_severe_less_5Dim)
         .group(health_severe_less_5GP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_psycho_traumaChart
         .dimension(health_psycho_traumaDim)
         .group(health_psycho_traumaGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 health_health_prob_otherChart
         .dimension(health_health_prob_otherDim)
         .group(health_health_prob_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 
 		
@@ -2712,9 +2806,7 @@ health_health_prob_otherChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(percent_birth_homeDim)
         .group(percent_birth_homeGP)
@@ -2722,9 +2814,7 @@ health_health_prob_otherChart
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(['#8C8C8C'])
-          .colorDomain([0,0])
-          .colorAccessor(function(d, i){return 1;})
+		.colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;	
 
@@ -2734,10 +2824,9 @@ health_health_prob_otherChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .innerRadius(50)
+		.colors(testcolor)
         .dimension(sexual_violenceDim)
         .group(sexual_violenceGroup);
 		;
@@ -2747,146 +2836,159 @@ health_health_prob_otherChart
 WASH_water_no_reducChart
         .dimension(WASH_water_no_reducDim)
         .group(WASH_water_no_reducGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_system_damagedChart
         .dimension(WASH_water_system_damagedDim)
         .group(WASH_water_system_damagedGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_lack_elecChart
         .dimension(WASH_water_lack_elecDim)
         .group(WASH_water_lack_elecGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_shortage_chlorineChart
         .dimension(WASH_water_shortage_chlorineDim)
         .group(WASH_water_shortage_chlorineGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_lack_fuelChart
         .dimension(WASH_water_lack_fuelDim)
         .group(WASH_water_lack_fuelGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_treatment_damagedChart
         .dimension(WASH_water_treatment_damagedDim)
         .group(WASH_water_treatment_damagedGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_otherChart
         .dimension(WASH_water_otherDim)
         .group(WASH_water_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_no_reduc_since_conflictChart
         .dimension(WASH_water_no_reduc_since_conflictDim)
         .group(WASH_water_no_reduc_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_system_damaged_since_conflictChart
         .dimension(WASH_water_system_damaged_since_conflictDim)
         .group(WASH_water_system_damaged_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_lack_elec_since_conflictChart
         .dimension(WASH_water_lack_elec_since_conflictDim)
         .group(WASH_water_lack_elec_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_shortage_chlorine_since_conflictChart
         .dimension(WASH_water_shortage_chlorine_since_conflictDim)
         .group(WASH_water_shortage_chlorine_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_lack_fuel_since_conflictChart
         .dimension(WASH_water_lack_fuel_since_conflictDim)
         .group(WASH_water_lack_fuel_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_treatment_damaged_since_conflictChart
         .dimension(WASH_water_treatment_damaged_since_conflictDim)
         .group(WASH_water_treatment_damaged_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 WASH_water_other_since_conflictChart
         .dimension(WASH_water_other_since_conflictDim)
         .group(WASH_water_other_since_conflictGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(20)
+		.colors(testcolor)
         .renderLabel(true);
 	price_soapCT
         .width(250)
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_soapDim)
         .group(price_soapGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	.colors(testcolor)
+        .x(d3.scale.linear().domain([0,8]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	price_jerrycanCT
@@ -2894,18 +2996,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_jerrycanDim)
         .group(price_jerrycanGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	price_laundryCT
@@ -2913,18 +3014,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_laundryDim)
         .group(price_laundryGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	price_napkinsCT
@@ -2932,18 +3032,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_napkinsDim)
         .group(price_napkinsGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 
 	price_diapersCT
@@ -2951,18 +3050,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_diapersDim)
         .group(price_diapersGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	coast_water_networkCT
@@ -2970,18 +3068,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(coast_water_networkDim)
         .group(coast_water_networkGP)
-	
-		  ////.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+	.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	coast_bottled_waterCT
@@ -2989,17 +3086,17 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(coast_bottled_waterDim)
         .group(coast_bottled_waterGP)
-		  //.ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	coast_public_water_truckCT
@@ -3007,16 +3104,16 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .dimension(coast_public_water_truckDim)
         .group(coast_public_water_truckGP)
-		 // .ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		 .colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
 		;
 		
 	coast_private_water_truckCT
@@ -3024,16 +3121,16 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .dimension(coast_private_water_truckDim)
         .group(coast_private_water_truckGP)
-		 // .ordering(function (p) { return -p.value;})
-          .elasticX(true)
-          .renderLabel(true)
-          .colors(d3.scale.category20c())
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+		.colors(testcolor)
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(4).tickFormat(function(d) {return d*1000})
 		;
      water_sourceCT
         .width(250)
@@ -3045,7 +3142,7 @@ WASH_water_other_since_conflictChart
 		  .ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 		
@@ -3059,7 +3156,7 @@ WASH_water_other_since_conflictChart
 		  .ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -3068,10 +3165,9 @@ WASH_water_other_since_conflictChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
         .innerRadius(60)
+		.colors(testcolor)
         .dimension(access_latrinesDim)
         .group(access_latrinesGP);
 		;
@@ -3086,7 +3182,7 @@ WASH_water_other_since_conflictChart
 		.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;	
 		
@@ -3098,47 +3194,47 @@ WASH_water_other_since_conflictChart
 food_obt_barteningChart
         .dimension(food_obt_barteningDim)
         .group(food_obt_barteningGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_obt_purchasedChart
         .dimension(food_obt_purchasedDim)
         .group(food_obt_purchasedGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_obt_own_producChart
         .dimension(food_obt_own_producDim)
         .group(food_obt_own_producGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_obt_receivChart
         .dimension(food_obt_receivDim)
         .group(food_obt_receivGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_obt_relativChart
         .dimension(food_obt_relativDim)
         .group(food_obt_relativGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_market_pricesChart
         .dimension(food_market_pricesDim)
@@ -3147,10 +3243,8 @@ food_market_pricesChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
+		////////////filter///////////////    
+         .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3159,74 +3253,74 @@ food_market_pricesChart
 food_acc_rzn_noneChart
         .dimension(food_acc_rzn_noneDim)
         .group(food_acc_rzn_noneGP)
-		.width(145)
+		.width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_lack_marketChart
         .dimension(food_acc_rzn_lack_marketDim)
         .group(food_acc_rzn_lack_marketGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_lack_ressChart
         .dimension(food_acc_rzn_lack_ressDim)
         .group(food_acc_rzn_lack_ressGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_type_expenChart
         .dimension(food_acc_rzn_type_expenDim)
         .group(food_acc_rzn_type_expenGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_foodNotAvChart
         .dimension(food_acc_rzn_foodNotAvDim)
         .group(food_acc_rzn_foodNotAvGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_local_prodDecrChart
         .dimension(food_acc_rzn_local_prodDecrDim)
         .group(food_acc_rzn_local_prodDecrGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_noFuelChart
         .dimension(food_acc_rzn_noFuelDim)
         .group(food_acc_rzn_noFuelGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_acc_rzn_acc_nofuelChart
         .dimension(food_acc_rzn_acc_nofuelDim)
         .group(food_acc_rzn_acc_nofuelGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_IDPs_foodChart
         .dimension(food_IDPs_foodDim)
@@ -3235,10 +3329,8 @@ food_IDPs_foodChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-         .colors(d3.scale.category20c())
+		////////////filter///////////////    
+          .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3251,463 +3343,463 @@ food_pop_food_preconfChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
+		////////////filter///////////////    
+         .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
         .xAxis().ticks(4).tickFormat(d3.format('s'))
   ;
+  
+  //avg
 food_avg_riceChart
         .dimension(food_avg_riceDim)
         .group(food_avg_riceGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+        .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,8]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avg_goatChart
         .dimension(food_avg_goatDim)
         .group(food_avg_goatGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#E64143"])
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*500})
   ;
 food_avg_chickehChart
         .dimension(food_avg_chickehDim)
         .group(food_avg_chickehGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#E64143"])
+        .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avg_oilChart
         .dimension(food_avg_oilDim)
         .group(food_avg_oilGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		 .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avg_sugarChart
         .dimension(food_avg_sugarDim)
         .group(food_avg_sugarGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		 .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_tomatoChart
         .dimension(food_avg_tomatoDim)
         .group(food_avg_tomatoGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		 .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_cucumberChart
         .dimension(food_avg_cucumberDim)
         .group(food_avg_cucumberGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+       .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_bread_privChart
         .dimension(food_avg_bread_privDim)
         .group(food_avg_bread_privGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+        .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_bread_pubChart
         .dimension(food_avg_bread_pubDim)
         .group(food_avg_bread_pubGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+          .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_flourChart
         .dimension(food_avg_flourDim)
         .group(food_avg_flourGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+       .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_milkChart
         .dimension(food_avg_milkDim)
         .group(food_avg_milkGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+       .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avg_eggChart
         .dimension(food_avg_eggDim)
         .group(food_avg_eggGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+   .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*20})
   ;
 food_avg_babyChart
         .dimension(food_avg_babyDim)
         .group(food_avg_babyGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+ .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*200})
   ;
 food_avg_pepsiChart
         .dimension(food_avg_pepsiDim)
         .group(food_avg_pepsiGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+          .colors(["#E64143"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_riceChart
         .dimension(food_avgB_riceDim)
         .group(food_avgB_riceGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+          .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,8]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avgB_goatChart
         .dimension(food_avgB_goatDim)
         .group(food_avgB_goatGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+          .colors(["#808080"])
+      .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*500})
   ;
 food_avgB_chickehChart
         .dimension(food_avgB_chickehDim)
         .group(food_avgB_chickehGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+        .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avgB_oilChart
         .dimension(food_avgB_oilDim)
         .group(food_avgB_oilGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*150})
   ;
 food_avgB_sugarChart
         .dimension(food_avgB_sugarDim)
         .group(food_avgB_sugarGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_tomatoChart
         .dimension(food_avgB_tomatoDim)
         .group(food_avgB_tomatoGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_cucumberChart
         .dimension(food_avgB_cucumberDim)
         .group(food_avgB_cucumberGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+        .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_bread_privChart
         .dimension(food_avgB_bread_privDim)
         .group(food_avgB_bread_privGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+       .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_bread_pubChart
         .dimension(food_avgB_bread_pubDim)
         .group(food_avgB_bread_pubGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+        .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_flourChart
         .dimension(food_avgB_flourDim)
         .group(food_avgB_flourGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_milkChart
         .dimension(food_avgB_milkDim)
         .group(food_avgB_milkGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
 food_avgB_eggChart
         .dimension(food_avgB_eggDim)
         .group(food_avgB_eggGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*20})
   ;
 food_avgB_babyChart
         .dimension(food_avgB_babyDim)
         .group(food_avgB_babyGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+         .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*200})
   ;
 food_avgB_pepsiChart
         .dimension(food_avgB_pepsiDim)
         .group(food_avgB_pepsiGP)
-         .width(200)
-        .height(250)
+         .width(300)
+        .height(165)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
-        .elasticX(true)
-        .renderLabel(true)
-         ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+		////////////filter///////////////    
+          .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,10]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d*50})
   ;
+  
+  //avg
 food__bread_sourceChart
         .dimension(food__bread_sourceDim)
         .group(food__bread_sourceGP)
@@ -3715,10 +3807,8 @@ food__bread_sourceChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
+		////////////filter///////////////    
+         .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3731,10 +3821,8 @@ food__day_nobreadprivChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
+		////////////filter///////////////    
+         .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3747,10 +3835,8 @@ food__day_nobreadpubChart
         .height(200)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
-        .colors(d3.scale.category20c())
+		////////////filter///////////////    
+         .colors(testcolor)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3759,184 +3845,185 @@ food__day_nobreadpubChart
 food_rnz_flourNAChart
         .dimension(food_rnz_flourNADim)
         .group(food_rnz_flourNAGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_flourExpChart
         .dimension(food_rnz_flourExpDim)
         .group(food_rnz_flourExpGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_yeastNAChart
         .dimension(food_rnz_yeastNADim)
         .group(food_rnz_yeastNAGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_yeastExpChart
         .dimension(food_rnz_yeastExpDim)
         .group(food_rnz_yeastExpGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_wheatNAChart
         .dimension(food_rnz_wheatNADim)
         .group(food_rnz_wheatNAGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_wheatExpChart
         .dimension(food_rnz_wheatExpDim)
         .group(food_rnz_wheatExpGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_elecNAChart
         .dimension(food_rnz_elecNADim)
         .group(food_rnz_elecNAGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_rnz_elecEXPChart
         .dimension(food_rnz_elecEXPDim)
         .group(food_rnz_elecEXPGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 food_SAMChart
         .dimension(food_SAMDim)
         .group(food_SAMGP) 
-         .width(200)
+         .width(300)
         .height(150)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
     .innerRadius(40)
+	.colors(testcolor)
         .renderLabel(true);
 
 //////////////////////Livelihoods
 liv_inc_stable_empChart
         .dimension(liv_inc_stable_empDim)
         .group(liv_inc_stable_empGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_unstable_empChart
         .dimension(liv_inc_unstable_empDim)
         .group(liv_inc_unstable_empGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_farm_ownerChart
         .dimension(liv_inc_farm_ownerDim)
         .group(liv_inc_farm_ownerGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_bussChart
         .dimension(liv_inc_bussDim)
         .group(liv_inc_bussGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_allowChart
         .dimension(liv_inc_allowDim)
         .group(liv_inc_allowGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_sup_famChart
         .dimension(liv_inc_sup_famDim)
         .group(liv_inc_sup_famGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_remitChart
         .dimension(liv_inc_remitDim)
         .group(liv_inc_remitGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_savChart
         .dimension(liv_inc_savDim)
         .group(liv_inc_savGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_aidChart
         .dimension(liv_inc_aidDim)
         .group(liv_inc_aidGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_cashChart
         .dimension(liv_inc_cashDim)
         .group(liv_inc_cashGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_inc_otherChart
         .dimension(liv_inc_otherDim)
         .group(liv_inc_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 
 
@@ -3949,11 +4036,9 @@ liv_currencyChart
         .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
 		.innerRadius(50)
-		.colors(d3.scale.category20c())
+		 .colors(testcolor)
         .renderLabel(true)
 		;
 		
@@ -3961,83 +4046,83 @@ liv_currencyChart
 liv_cop_beggChart
         .dimension(liv_cop_beggDim)
         .group(liv_cop_beggGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_loanChart
         .dimension(liv_cop_loanDim)
         .group(liv_cop_loanGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_relativeChart
         .dimension(liv_cop_relativeDim)
         .group(liv_cop_relativeGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_garbageChart
         .dimension(liv_cop_garbageDim)
         .group(liv_cop_garbageGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_HhassetChart
         .dimension(liv_cop_HhassetDim)
         .group(liv_cop_HhassetGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_skipmealChart
         .dimension(liv_cop_skipmealDim)
         .group(liv_cop_skipmealGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_szemealChart
         .dimension(liv_cop_szemealDim)
         .group(liv_cop_szemealGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_noEatChart
         .dimension(liv_cop_noEatDim)
         .group(liv_cop_noEatGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 liv_cop_otherChart
         .dimension(liv_cop_otherDim)
         .group(liv_cop_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 		
 		
@@ -4050,12 +4135,10 @@ liv_cop_otherChart
         .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_sec_schoolChart
@@ -4065,11 +4148,9 @@ liv_cop_otherChart
          .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_univ_schoolChart
@@ -4079,12 +4160,10 @@ liv_cop_otherChart
          .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_insti_schoolChart
@@ -4094,12 +4173,10 @@ liv_cop_otherChart
          .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_High_schoolChart
@@ -4109,104 +4186,102 @@ liv_cop_otherChart
          .height(150)
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		 .data(function(group) {
-			return group.all().filter(function(kv) { return kv.key !="NA"; });
-			})             
+		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-          .colors(d3.scale.category20c())
+           .colors(testcolor)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 ///rzn education
 Educ_All_children_access_education_servicesChart
         .dimension(Educ_All_children_access_education_servicesDim)
         .group(Educ_All_children_access_education_servicesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_due_to_destruction_of_facilitiesChart
         .dimension(Educ_due_to_destruction_of_facilitiesDim)
         .group(Educ_due_to_destruction_of_facilitiesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_due_to_lack_of_teaching_staffChart
         .dimension(Educ_due_to_lack_of_teaching_staffDim)
         .group(Educ_due_to_lack_of_teaching_staffGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.innerRadius(20)
+		.innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_due_to_lack_of_school_suppliesChart
         .dimension(Educ_due_to_lack_of_school_suppliesDim)
         .group(Educ_due_to_lack_of_school_suppliesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.innerRadius(20)
+		.innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_facilities_used_for_alternative_purposesChart
         .dimension(Educ_facilities_used_for_alternative_purposesDim)
         .group(Educ_facilities_used_for_alternative_purposesGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.innerRadius(20)
+		.innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_Distance_to_services_is_too_farChart
         .dimension(Educ_Distance_to_services_is_too_farDim)
         .group(Educ_Distance_to_services_is_too_farGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.innerRadius(20)
+		.innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_Route_to_services_is_unsafeChart
         .dimension(Educ_Route_to_services_is_unsafeDim)
         .group(Educ_Route_to_services_is_unsafeGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-		.innerRadius(20)
+		.innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_Services_have_no_spaces_availableChart
         .dimension(Educ_Services_have_no_spaces_availableDim)
         .group(Educ_Services_have_no_spaces_availableGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_Parents_do_not_approve_of_curriculumChart
         .dimension(Educ_Parents_do_not_approve_of_curriculumDim)
         .group(Educ_Parents_do_not_approve_of_curriculumGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 Educ_otherChart
         .dimension(Educ_otherDim)
         .group(Educ_otherGP) 
-         .width(145)
+         .width(175)
         .height(80)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(20)
+    .innerRadius(20) .colors(testcolor)
         .renderLabel(true);
 
 
