@@ -850,7 +850,7 @@ experiments.forEach(function(x) {
 
 ////////////colorfunction
 var color_educ  = d3.scale.ordinal()
-    .domain(["Functioning Providing lessons","No information","Not available","Not functioning"])
+    .domain(["Functioning / Providing lessons","No information","Not available","Not functioning"])
      .range(["#f89e59","#D3CAB7","#E7E2D6","#E64143"]);
 	 
 var testcolor  = d3.scale.ordinal()
@@ -2479,10 +2479,10 @@ NFI_lack_fuel_otherChart
         .dimension(rzn_not_access_healthDim)
         .group(rzn_not_access_healthGP)
 	
-		  ////.ordering(function (p) { return -p.value;})
+		  .ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-          .colors(dummies)
+          .colors(colorone)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 
@@ -2909,7 +2909,7 @@ health_health_prob_otherChart
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
-			.colors(dummies)
+			.colors(colorone)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		  //.legend(dc.legend())
 		;	
@@ -3339,7 +3339,7 @@ food_market_pricesChart
         .dimension(food_market_pricesDim)
         .group(food_market_pricesGP)
          .width(300)
-        .height(200)        		
+        .height(100)        		
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
 		////////////filter///////////////    
@@ -3429,7 +3429,7 @@ food_IDPs_foodChart
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
 		////////////filter///////////////    
-          .colors(testcolor)
+          .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -3443,7 +3443,7 @@ food_pop_food_preconfChart
 		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
 		////////////filter///////////////    
-         .colors(testcolor)
+         .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
@@ -4240,7 +4240,7 @@ liv_cop_otherChart
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-           .colors(testcolor)
+           .colors(color_educ)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_sec_schoolChart
@@ -4252,7 +4252,7 @@ liv_cop_otherChart
 	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
 		////////////filter///////////////    
           .renderLabel(true)
-           .colors(testcolor)
+           .colors(color_educ)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_univ_schoolChart
@@ -4265,7 +4265,7 @@ liv_cop_otherChart
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-           .colors(testcolor)
+           .colors(color_educ)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_insti_schoolChart
@@ -4278,7 +4278,7 @@ liv_cop_otherChart
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-           .colors(testcolor)
+           .colors(color_educ)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 	edu_High_schoolChart
@@ -4291,7 +4291,7 @@ liv_cop_otherChart
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
-           .colors(testcolor)
+           .colors(color_educ)
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 ///rzn education
