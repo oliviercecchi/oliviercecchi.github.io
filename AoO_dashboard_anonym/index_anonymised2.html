@@ -56,7 +56,7 @@ a:hover{text-decoration: underline;}
    <div class="span8"><a href="index.html"><h1>Area of Origin - Data collected during April 2015</h1></a>
 	   <div class="row-fluid">
 		
-		  <div id="map"></div>	
+		  <div id="map"><p>Sub-district assessed<p></div>	
 		  <div id="mapheader">
 			<div id="mapheader1"><a id="dmapheader" href="javascript:togglemap('inset','dmapheader');"><small>Show map</small></a>
 			<div id="inset"style = "position:relative;display:none">
@@ -93,7 +93,7 @@ a:hover{text-decoration: underline;}
 	  </div>
 </div>
 </div>
-<div class="row-fluid"><h3>Displacement <small> 
+<div class="row-fluid"><h3><img src="image/ic_displacement.png" width="25" height="25"style="border-width:10px;"><a> </a>Displacement <small> 
 <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | <a id="displ_head" href="javascript:toggle('displ_content','displ_head');">Show section</a>
  | <a style="color:grey">Average confidence level: <span id='meanCONFID_Displacement'></span>/3</a></small></h3>
     <div class="row-fluid" id="displ_content" style="display: none">
@@ -157,11 +157,15 @@ a:hover{text-decoration: underline;}
 		<div  id="Disp_host_conf_arrestDIV"><p>Fear of arbitrary arrest?</br></br></p></div>
 		<div  id="Disp_host_conf_otherDIV"><p>Other?</br></br></p></div>
      </div>
+	 <div class="row-fluid"><h4>Border crossing</h4>
+	  <div id='Disp_min_cost_borderDIV'><p>Average cost of border crossing (low estimate)</p></div>
+	  <div id='Disp_max_cost_borderDIV'><p>Average cost of border crossing (high estimate)</p></div>
+	</div>
 
 	 </div>
   </div>
   
-  <div class="row-fluid"><h3>Shelter <small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+  <div class="row-fluid"><h3><img src="image/ic_shelter.png" width="25" height="25"style="border-width:10px;"><a> </a>Shelter <small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	<a id="shelt_head" href="javascript:toggle('shelt_content','shelt_head');" >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Shelter'></span>/3</a></small></h3>
     <div class="row-fluid" id="shelt_content"style="display: none">
@@ -171,7 +175,7 @@ a:hover{text-decoration: underline;}
     </div>
   </div>
    
-  <div class="row-fluid"><h3>Non-Food Item <small> <a
+  <div class="row-fluid"><h3><img src="image/ic_NFI2.png" width="25" height="25"style="border-width:10px;"><a> </a>Non-Food Item <small> <a
     href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
 	<a id="nfi_head" href="javascript:toggle('nfi_content','nfi_head');" >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_NFI'></span>/3</a></small></h3>
@@ -203,7 +207,7 @@ a:hover{text-decoration: underline;}
   </div>
 </div>
   
-  <div class="row-fluid"><h3>Health<small>  <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
+  <div class="row-fluid"><h3><img src="image/ic_health.png" width="25" height="25"style="border-width:10px;"><a> </a>Health<small>  <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
   <a id="health_head" href="javascript:toggle('health_content','health_head');" >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Health'></span>/3</a></small></h3>
     <div class="row-fluid" id="health_content"style="display: none">
@@ -274,7 +278,7 @@ a:hover{text-decoration: underline;}
     </div>
   </div>
   
-  <div class="row-fluid"><h3>WASH<small> <a
+  <div class="row-fluid"><h3><img src="image/ic_WASH.png" width="25" height="25"style="border-width:10px;"><a> </a>WASH<small> <a
          href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 		 <a id="WASH_head" href="javascript:toggle('WASH_content','WASH_head');">Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
@@ -299,8 +303,7 @@ a:hover{text-decoration: underline;}
 	</div>
     <div class="row-fluid">
     <div class="span6">
-    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water in village since March 2015</h4>
-      <div id='WASH_water_no_reducDIV'><p>No reduction?</br></br></p></div>
+    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since March 2015</h4>
 	  <!-- TO REMOVE -->
 	  <div id='WASH_water_system_damagedDIV'><p>Water system damaged?</br></br></p></div>
 	  <div id='WASH_water_lack_elecDIV'><p>Lack of electricity?</br></br></p></div>
@@ -311,8 +314,7 @@ a:hover{text-decoration: underline;}
 	</div>
     </div>
     <div class="span6">
-    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water in village since the conflict began</h4>
-	  <div id='WASH_water_no_reduc_since_conflictDIV'><p style="color:green">No reduction?</br></br></p></div>
+    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since the conflict began</h4>
 	  <div id='WASH_water_system_damaged_since_conflictDIV'><p>Water system damaged?</br></br></p></div>
 	  <div id='WASH_water_lack_elec_since_conflictDIV'><p>Lack of electricity?</br></br></p></div>
 	  <div id='WASH_water_shortage_chlorine_since_conflictDIV'><p>Lack of chlorine?</br></br></p></div>
@@ -326,7 +328,7 @@ a:hover{text-decoration: underline;}
   </div>
   </div>
   
-  <div class="row-fluid"><h3>Food Security<small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+  <div class="row-fluid"><h3><img src="image/ic_food.png" width="25" height="25"style="border-width:10px;"><a> </a>Food Security<small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
   <a id="Food_head" href="javascript:toggle('Food_content','Food_head');"  >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Food_Security'></span>/3</a></small></h3>
     <div class="row-fluid" id="Food_content"style="display: none">
@@ -412,7 +414,7 @@ a:hover{text-decoration: underline;}
     </div>
  
   
- <div class="row-fluid"><h3>Livelihoods<small> <a
+ <div class="row-fluid"><h3><img src="image/ic_livelihood.png" width="25" height="25"style="border-width:10px;"><a> </a>Livelihoods<small> <a
      href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	 <a id="Livelihoods_head" href="javascript:toggle('Livelihoods_content','Livelihoods_head');"  >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Livelihoods'></span>/3</a></small></h3>
@@ -447,7 +449,7 @@ a:hover{text-decoration: underline;}
     </div>
   </div>
    
-  <div class="row-fluid"><h3>Education<small> <a
+  <div class="row-fluid"><h3><img src="image/ic_education.png" width="25" height="25"style="border-width:10px;"><a> </a>Education<small> <a
     href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	<a id="Education_head" href="javascript:toggle('Education_content','Education_head');" >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Education'></span>/3</a></small></h3>
@@ -460,7 +462,6 @@ a:hover{text-decoration: underline;}
 		  <div id="edu_insti_schoolDIV"><p>Institute - status</p></div>
 		</div>
 		<div class="row-fluid"><h4>Most common reasons why school-aged children are not attending school</h4>
-			  <div id='Educ_All_children_access_education_servicesDIV'><p>All children access</br> education services?</p></div>
 			  <!-- TO REMOVE -->
 			  <div id='Educ_due_to_destruction_of_facilitiesDIV'><p>Destruction </br>of facilities?</p></div>
 			  <div id='Educ_due_to_lack_of_teaching_staffDIV'><p>Lack of teaching</br> staff?</p></div>
@@ -672,14 +673,12 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 
 	///////////////wash
 		
-	WASH_water_no_reducChart = dc.pieChart('#WASH_water_no_reducDIV')
 	WASH_water_system_damagedChart = dc.pieChart('#WASH_water_system_damagedDIV')
 	WASH_water_lack_elecChart = dc.pieChart('#WASH_water_lack_elecDIV')
 	WASH_water_shortage_chlorineChart = dc.pieChart('#WASH_water_shortage_chlorineDIV')
 	WASH_water_lack_fuelChart = dc.pieChart('#WASH_water_lack_fuelDIV')
 	WASH_water_treatment_damagedChart = dc.pieChart('#WASH_water_treatment_damagedDIV')
 	WASH_water_otherChart = dc.pieChart('#WASH_water_otherDIV')
-	WASH_water_no_reduc_since_conflictChart = dc.pieChart('#WASH_water_no_reduc_since_conflictDIV')
 	WASH_water_system_damaged_since_conflictChart = dc.pieChart('#WASH_water_system_damaged_since_conflictDIV')
 	WASH_water_lack_elec_since_conflictChart = dc.pieChart('#WASH_water_lack_elec_since_conflictDIV')
 	WASH_water_shortage_chlorine_since_conflictChart = dc.pieChart('#WASH_water_shortage_chlorine_since_conflictDIV')
@@ -808,7 +807,6 @@ var mapChart          = dc.geoChoroplethChart("#map"),
 
 
 
-	Educ_All_children_access_education_servicesChart = dc.pieChart('#Educ_All_children_access_education_servicesDIV')
 	Educ_due_to_destruction_of_facilitiesChart = dc.pieChart('#Educ_due_to_destruction_of_facilitiesDIV')
 	Educ_due_to_lack_of_teaching_staffChart = dc.pieChart('#Educ_due_to_lack_of_teaching_staffDIV')
 	Educ_due_to_lack_of_school_suppliesChart = dc.pieChart('#Educ_due_to_lack_of_school_suppliesDIV')
@@ -1236,7 +1234,7 @@ var inbipie =40;
       price_roofingGP    = price_roofingDim.group();
 	  price_coalDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_1_Butane_gas_1_Cannister_avg_price"]/1000);}),
       price_coalGP    = price_coalDim.group();
-	  price_fire_woodDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_5_Fire_Wood_1_tonne_avg_price"]/100);}),
+	  price_fire_woodDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_5_Fire_Wood_1_tonne_avg_price"]/10000);}),
       price_fire_woodGP    = price_fire_woodDim.group();
 	  price_wood_constrDim      = ndx.dimension(function(d) {return Math.floor(d["NFI/Q3_3_6_Wood_for_construction_1_metre_avg_price"]/1000);}),
       price_wood_constrGP    = price_wood_constrDim.group();
@@ -1357,7 +1355,7 @@ var inbipie =40;
       coast_water_networkGP    = coast_water_networkDim.group();
 	  coast_bottled_waterDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_3_Bottled_water_litre_avg_cost_pre_m"]/100);}),
       coast_bottled_waterGP    = coast_bottled_waterDim.group();
-	  coast_public_water_truckDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_2_Water_trucking_public_subsidised_cubic_cost_pre_m"]/100);}),
+	  coast_public_water_truckDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_2_Water_trucking_public_subsidised_cubic_cost_pre_m"]/1000);}),
       coast_public_water_truckGP    = coast_public_water_truckDim.group();
 	  coast_private_water_truckDim      = ndx.dimension(function (d)   {return Math.floor(d["WASH/Q5_2_1_Water_trucking_private_cubic_cost_pre_m"]/1000);}),
       coast_private_water_truckGP    = coast_private_water_truckDim.group();
@@ -1512,8 +1510,8 @@ Disp_host_conf_borderDim = ndx.dimension(function(d) {return d['Displacement/Q1_
 Disp_host_conf_serviceDim = ndx.dimension(function(d) {return d['Displacement/Q1_10_events_lead_Pre_conf_popul_leave_village/Reduced_access_to_basic_services'];});	Disp_host_conf_serviceGP = Disp_host_conf_serviceDim.group();
 Disp_host_conf_arrestDim = ndx.dimension(function(d) {return d['Displacement/Q1_10_events_lead_Pre_conf_popul_leave_village/Fear_of_arbitrary_arrest'];});	Disp_host_conf_arrestGP = Disp_host_conf_arrestDim.group();
 Disp_host_conf_otherDim = ndx.dimension(function(d) {return d['Displacement/Q1_10_events_lead_Pre_conf_popul_leave_village/other'];});	Disp_host_conf_otherGP = Disp_host_conf_otherDim.group();
-Disp_min_cost_borderDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_11/Q1_11_1_min_paid_for_transport_from_village_to_border']/100); });	Disp_min_cost_borderGP = Disp_min_cost_borderDim.group();
-Disp_max_cost_borderDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_11/Q1_11_2_max_paid_for_transport_from_village_to_border']/100); });	Disp_max_cost_borderGP = Disp_max_cost_borderDim.group();
+Disp_min_cost_borderDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_11/Q1_11_1_min_paid_for_transport_from_village_to_border']/1000); });	Disp_min_cost_borderGP = Disp_min_cost_borderDim.group();
+Disp_max_cost_borderDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_11/Q1_11_2_max_paid_for_transport_from_village_to_border']/1000); });	Disp_max_cost_borderGP = Disp_max_cost_borderDim.group();
 Disp_min_returnDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_12/Q1_12_1_Minimum_popul_left_village_and_later_returned']/100); });	Disp_min_returnGP = Disp_min_returnDim.group();
 Disp_max_returnDim = ndx.dimension(function(d) {return Math.floor(d['Displacement/G1_12/Q1_12_2_Maximum_popul_left_village_and_later_returned']/100); });	Disp_max_returnGP = Disp_max_returnDim.group();
 
@@ -1686,8 +1684,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
     	
         .dimension(PreConfPopDim)
         .group(PreConfPopGroup)      		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 	
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
@@ -1699,8 +1697,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
     Idp_presChart
         .width(250)
         .height(100)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
       //  .innerRadius(donutin)
         .dimension(IDP_presDIM)
         .group(IDP_presGroup)  
@@ -1715,8 +1713,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(GovOriDim)
         .group(GovOriGroup)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
                     })
@@ -1732,8 +1730,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(DistOriDim)
         .group(DistOriGroup)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
                     })
@@ -1749,8 +1747,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(SDOriDim)
         .group(SDOriGroup)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
                     })
@@ -1768,8 +1766,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(syrianGP)
        .width(donutwidth)
         .height(donutheight)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
 	   .colors(dummies)
 		;
@@ -1779,8 +1777,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(other_foreign_nationalsGP)
        .width(donutwidth)
         .height(donutheight) 
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1790,8 +1788,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(employmentGP)
        .width(donutwidth)
         .height(donutheight)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1801,8 +1799,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(familyGP)
        .width(donutwidth)
         .height(donutheight)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1812,8 +1810,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(accessibleGP)
        .width(donutwidth)
         .height(donutheight) 
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1823,8 +1821,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(protect_assetsGP)
        .width(donutwidth)
         .height(donutheight)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1834,8 +1832,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(cannot_physicallyGP)
        .width(donutwidth)
         .height(donutheight) 
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1845,8 +1843,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(no_moneyGP)
        .width(donutwidth)
         .height(donutheight)        
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1856,8 +1854,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(transitGP)
        .width(donutwidth)
         .height(donutheight)        
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1867,8 +1865,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(other_rznGP)
        .width(donutwidth)
         .height(donutheight)        
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1877,8 +1875,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(employment_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1889,8 +1887,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(family_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1900,8 +1898,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(accessible_pre_conf_popGP)
         .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -1911,8 +1909,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(protect_assets_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1923,8 +1921,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(cannot_physically_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1935,8 +1933,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(no_money_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1947,8 +1945,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(transit_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1959,8 +1957,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(other_rzn_pre_conf_popGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1971,8 +1969,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(escal_conflictGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1983,8 +1981,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(access_moneyGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -1995,8 +1993,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(loss_incomeGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -2007,8 +2005,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(loss_assetsGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -2019,8 +2017,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(opening_borderGP)
        .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -2031,8 +2029,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(reduce_access_servicesGP)
         .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		
@@ -2043,8 +2041,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(fear_arrestGP)
         .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .innerRadius(donutin)
          .colors(dummies)
 		
@@ -2055,8 +2053,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .group(other_rzn_leaveGP)
         .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .innerRadius(donutin)
          .colors(dummies)
 		;
@@ -2065,8 +2063,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 	type_housing_idpsCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .dimension(type_housing_idpsDim)
         .group(type_housing_idpsGP)
 		  .ordering(function (p) { return -p.value;})
@@ -2079,8 +2077,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		type_housing_pre_conf_popCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(type_housing_pre_conf_popDim)
         .group(type_housing_pre_conf_popGP)
 	
@@ -2094,8 +2092,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		type_housing_damagedCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        // .innerRadius(30)
         .dimension(type_housing_damagedDim)
         .group(type_housing_damagedGP)
@@ -2111,8 +2109,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		elec_before_conflictChart
         .width(425)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .innerRadius(50)
         .dimension(elec_before_conflictDim)
@@ -2124,8 +2122,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		elec_prev_monthChart
         .width(425)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .innerRadius(50)
         .dimension(elec_prev_monthDim)
@@ -2137,14 +2135,14 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_butaneCT
 		 .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_butaneDim)
         .group(price_butaneGP)
 		.colors(price)
-        .x(d3.scale.linear().domain([1,11]))
+        .x(d3.scale.linear().domain([1,15]))
 		.outerPadding(0.3)
 		.elasticY(true)
 		.xAxisLabel("SYP", 5)
@@ -2155,8 +2153,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_keroseneCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_keroseneDim)
@@ -2173,8 +2171,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_propaneCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_propaneDim)
@@ -2191,8 +2189,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_roofingCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_roofingDim)
@@ -2209,8 +2207,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_coalCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_coalDim)
@@ -2227,8 +2225,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_fire_woodCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_fire_woodDim)
@@ -2239,14 +2237,14 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		.elasticY(true)
 		.xAxisLabel("SYP", 5)
 		.yAxisLabel("% of villages", 30)
-		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
+		.xAxis().ticks(5).tickFormat(function(d) {return d*10 +"K"})
 		;
 		
 		price_wood_constrCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_wood_constrDim)
@@ -2264,8 +2262,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		price_cementCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_cementDim)
@@ -2284,8 +2282,8 @@ NFI_burn_no_lackfuelChart
         .group(NFI_burn_no_lackfuelGP) 
          .width(donutwidth)
         .height(donutheight)        			
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
         .renderLabel(true);
@@ -2295,8 +2293,8 @@ NFI_burn_furn_withoutChart
         .group(NFI_burn_furn_withoutGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2306,8 +2304,8 @@ NFI_burn_furn_withChart
         .group(NFI_burn_furn_withGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2317,8 +2315,8 @@ NFI_burn_agr_apparelChart
         .group(NFI_burn_agr_apparelGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2328,8 +2326,8 @@ NFI_burn_clothesChart
         .group(NFI_burn_clothesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2339,8 +2337,8 @@ NFI_burn_plascticsChart
         .group(NFI_burn_plascticsGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2350,8 +2348,8 @@ NFI_burn_wasteChart
         .group(NFI_burn_wasteGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
 		.colors(dummies)
@@ -2362,8 +2360,8 @@ NFI_lack_fuel_otherChart
          .width(donutwidth)
         .height(donutheight)        		
 		.colors(dummies)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
     .innerRadius(donutin)
         .renderLabel(true);
@@ -2372,8 +2370,8 @@ NFI_lack_fuel_otherChart
 	    public_hospitalCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(public_hospitalDim)
         .group(public_hospitalGP)
 		.ordering(function(d) {
@@ -2392,8 +2390,8 @@ NFI_lack_fuel_otherChart
 		private_hospitalCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 
         .dimension(private_hospitalDim)
         .group(private_hospitalGP)
@@ -2412,8 +2410,8 @@ NFI_lack_fuel_otherChart
 		primary_health_centreCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(primary_health_centreDim)
         .group(primary_health_centreGP)
 		.ordering(function(d) {
@@ -2431,8 +2429,8 @@ NFI_lack_fuel_otherChart
 		mobile_clinicCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(mobile_clinicDim)
         .group(mobile_clinicGP)
 		.ordering(function(d) {
@@ -2450,8 +2448,8 @@ NFI_lack_fuel_otherChart
 		private_clinicCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(private_clinicDim)
@@ -2472,8 +2470,8 @@ NFI_lack_fuel_otherChart
         rzn_not_access_healthCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(rzn_not_access_healthDim)
@@ -2491,8 +2489,8 @@ health_all_health_functioningChart
         .group(health_all_health_functioningGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2501,8 +2499,8 @@ health_no_health_facilitiesChart
         .group(health_no_health_facilitiesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2511,8 +2509,8 @@ health_lack_funds_healthChart
         .group(health_lack_funds_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2521,8 +2519,8 @@ health_no_elec_healthChart
         .group(health_no_elec_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2531,8 +2529,8 @@ health_no_medecineChart
         .group(health_no_medecineGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2541,8 +2539,8 @@ health_no_water_healthChart
         .group(health_no_water_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2551,8 +2549,8 @@ health_no_equipement_healthChart
         .group(health_no_equipement_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2561,8 +2559,8 @@ health_no_medical_staffChart
         .group(health_no_medical_staffGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2571,8 +2569,8 @@ health_no_female_staffChart
         .group(health_no_female_staffGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2581,8 +2579,8 @@ health_facilities_damagedChart
         .group(health_facilities_damagedGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2591,8 +2589,8 @@ health_sed_alternative_healthChart
         .group(health_sed_alternative_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2601,8 +2599,8 @@ health_other_healthChart
         .group(health_other_healthGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2611,8 +2609,8 @@ health_child_immunizationChart
         .group(health_child_immunizationGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2621,8 +2619,8 @@ health_diarrhea_managementChart
         .group(health_diarrhea_managementGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2631,8 +2629,8 @@ health_emergency_careChart
         .group(health_emergency_careGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2641,8 +2639,8 @@ health_skilled_careChart
         .group(health_skilled_careGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2651,8 +2649,8 @@ health_surgeryChart
         .group(health_surgeryGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2661,8 +2659,8 @@ health_diabetes_careChart
         .group(health_diabetes_careGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2672,8 +2670,8 @@ health_diabetes_careChart
 		health_price_antibioCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_antibioDim)
@@ -2689,8 +2687,8 @@ health_diabetes_careChart
 		health_price_analgesicsCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_analgesicsDim)
@@ -2706,8 +2704,8 @@ health_diabetes_careChart
 		health_price_orsCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(health_price_orsDim)
@@ -2724,8 +2722,8 @@ health_diabetes_careChart
 		health_ppl_payChart
         .width(Wbigpie)
         .height(Hbigpie)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////   
 		.ordering(function (p) {return -p.value;})
         .innerRadius(inbipie)
@@ -2739,8 +2737,8 @@ health_disabilitiesChart
         .group(health_disabilitiesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2749,8 +2747,8 @@ health_diarrheaChart
         .group(health_diarrheaGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2759,8 +2757,8 @@ health_skin_diseaseChart
         .group(health_skin_diseaseGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2769,8 +2767,8 @@ health_leichmaniasisChart
         .group(health_leichmaniasisGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2779,8 +2777,8 @@ health_measlesChart
         .group(health_measlesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2789,8 +2787,8 @@ health_communicable_diseasesChart
         .group(health_communicable_diseasesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2799,8 +2797,8 @@ health_chronic_diseasesChart
         .group(health_chronic_diseasesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2809,8 +2807,8 @@ health_maternal_health_issuesChart
         .group(health_maternal_health_issuesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2819,8 +2817,8 @@ health_injuriesChart
         .group(health_injuriesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2829,8 +2827,8 @@ health_respiratory_infectChart
         .group(health_respiratory_infectGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2839,8 +2837,8 @@ health_feverChart
         .group(health_feverGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2849,8 +2847,8 @@ health_polioChart
         .group(health_polioGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2859,8 +2857,8 @@ health_malnutritionChart
         .group(health_malnutritionGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2869,8 +2867,8 @@ health_severe_less_5Chart
         .group(health_severe_less_5GP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2879,8 +2877,8 @@ health_psycho_traumaChart
         .group(health_psycho_traumaGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2889,8 +2887,8 @@ health_health_prob_otherChart
         .group(health_health_prob_otherGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2899,8 +2897,8 @@ health_health_prob_otherChart
 	percent_birth_homeCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(percent_birth_homeDim)
@@ -2918,8 +2916,8 @@ health_health_prob_otherChart
      sexual_violenceCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .innerRadius(50)
 		.colors(dummies)
@@ -2931,23 +2929,14 @@ health_health_prob_otherChart
 
 /////////////WASH
 
-WASH_water_no_reducChart
-        .dimension(WASH_water_no_reducDim)
-        .group(WASH_water_no_reducGP) 
-         .width(donutwidth)
-        .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(donutin)
-		.colors(dummies)
-        .renderLabel(true);
+
 WASH_water_system_damagedChart
         .dimension(WASH_water_system_damagedDim)
         .group(WASH_water_system_damagedGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2956,8 +2945,8 @@ WASH_water_lack_elecChart
         .group(WASH_water_lack_elecGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2966,8 +2955,8 @@ WASH_water_shortage_chlorineChart
         .group(WASH_water_shortage_chlorineGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2976,8 +2965,8 @@ WASH_water_lack_fuelChart
         .group(WASH_water_lack_fuelGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2986,8 +2975,8 @@ WASH_water_treatment_damagedChart
         .group(WASH_water_treatment_damagedGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -2996,28 +2985,19 @@ WASH_water_otherChart
         .group(WASH_water_otherGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
-WASH_water_no_reduc_since_conflictChart
-        .dimension(WASH_water_no_reduc_since_conflictDim)
-        .group(WASH_water_no_reduc_since_conflictGP) 
-         .width(donutwidth)
-        .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(donutin)
-		.colors(dummies)
-        .renderLabel(true);
+
 WASH_water_system_damaged_since_conflictChart
         .dimension(WASH_water_system_damaged_since_conflictDim)
         .group(WASH_water_system_damaged_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -3026,8 +3006,8 @@ WASH_water_lack_elec_since_conflictChart
         .group(WASH_water_lack_elec_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -3036,8 +3016,8 @@ WASH_water_shortage_chlorine_since_conflictChart
         .group(WASH_water_shortage_chlorine_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -3046,8 +3026,8 @@ WASH_water_lack_fuel_since_conflictChart
         .group(WASH_water_lack_fuel_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -3056,8 +3036,8 @@ WASH_water_treatment_damaged_since_conflictChart
         .group(WASH_water_treatment_damaged_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
@@ -3066,16 +3046,16 @@ WASH_water_other_since_conflictChart
         .group(WASH_water_other_since_conflictGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 		.colors(dummies)
         .renderLabel(true);
 	price_soapCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_soapDim)
@@ -3092,8 +3072,8 @@ WASH_water_other_since_conflictChart
 	price_jerrycanCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_jerrycanDim)
@@ -3110,8 +3090,8 @@ WASH_water_other_since_conflictChart
 	price_laundryCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_laundryDim)
@@ -3128,8 +3108,8 @@ WASH_water_other_since_conflictChart
 	price_napkinsCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_napkinsDim)
@@ -3146,8 +3126,8 @@ WASH_water_other_since_conflictChart
 	price_diapersCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(price_diapersDim)
@@ -3164,8 +3144,8 @@ WASH_water_other_since_conflictChart
 	coast_water_networkCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(coast_water_networkDim)
@@ -3182,8 +3162,8 @@ WASH_water_other_since_conflictChart
 	coast_bottled_waterCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
         .dimension(coast_bottled_waterDim)
@@ -3200,30 +3180,30 @@ WASH_water_other_since_conflictChart
 	coast_public_water_truckCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .dimension(coast_public_water_truckDim)
         .group(coast_public_water_truckGP)
 		 .colors(price)
-        .x(d3.scale.linear().domain([0,10]))
+        .x(d3.scale.linear().domain([0,15]))
 		.outerPadding(0.15)
 		.elasticY(true)
 		.xAxisLabel("SYP", 5)
 		.yAxisLabel("% of villages", 30)
-		.xAxis().ticks(5).tickFormat(function(d) {return d*100})
+		.xAxis().ticks(5).tickFormat(function(d) {return d*1000})
 		;
 		
 	coast_private_water_truckCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .dimension(coast_private_water_truckDim)
         .group(coast_private_water_truckGP)
 		.colors(price)
-        .x(d3.scale.linear().domain([0,10]))
+        .x(d3.scale.linear().domain([0,15]))
 		.outerPadding(0.15)
 		.elasticY(true)
 		.xAxisLabel("SYP", 5)
@@ -3233,8 +3213,8 @@ WASH_water_other_since_conflictChart
      water_sourceCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })        
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })        
         .dimension(water_sourceDim)
         .group(water_sourceGP)
 		  .ordering(function (p) { return -p.value;})
@@ -3247,8 +3227,8 @@ WASH_water_other_since_conflictChart
 	water_statusCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; }) 
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; }) 
         .dimension(water_statusDim)
         .group(water_statusGP)
 		  .ordering(function (p) { return -p.value;})
@@ -3261,8 +3241,8 @@ WASH_water_other_since_conflictChart
      access_latrinesCT
         .width(Wbigpie)
         .height(Hbigpie)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .innerRadius(inbipie)
 		.colors(dummies)
@@ -3274,8 +3254,8 @@ WASH_water_other_since_conflictChart
 	dispose_garbageCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(dispose_garbageDim)
         .group(dispose_garbageGP)
 		.ordering(function (p) { return -p.value;})
@@ -3295,8 +3275,8 @@ food_obt_barteningChart
         .group(food_obt_barteningGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_obt_purchasedChart
@@ -3304,8 +3284,8 @@ food_obt_purchasedChart
         .group(food_obt_purchasedGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_obt_own_producChart
@@ -3313,8 +3293,8 @@ food_obt_own_producChart
         .group(food_obt_own_producGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_obt_receivChart
@@ -3322,8 +3302,8 @@ food_obt_receivChart
         .group(food_obt_receivGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_obt_relativChart
@@ -3331,8 +3311,8 @@ food_obt_relativChart
         .group(food_obt_relativGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_market_pricesChart
@@ -3340,8 +3320,8 @@ food_market_pricesChart
         .group(food_market_pricesGP)
          .width(300)
         .height(100)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(dummies)
         .elasticX(true)
@@ -3354,8 +3334,8 @@ food_acc_rzn_noneChart
         .group(food_acc_rzn_noneGP)
 		.width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_lack_marketChart
@@ -3363,8 +3343,8 @@ food_acc_rzn_lack_marketChart
         .group(food_acc_rzn_lack_marketGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_lack_ressChart
@@ -3372,8 +3352,8 @@ food_acc_rzn_lack_ressChart
         .group(food_acc_rzn_lack_ressGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_type_expenChart
@@ -3381,8 +3361,8 @@ food_acc_rzn_type_expenChart
         .group(food_acc_rzn_type_expenGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_foodNotAvChart
@@ -3390,8 +3370,8 @@ food_acc_rzn_foodNotAvChart
         .group(food_acc_rzn_foodNotAvGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_local_prodDecrChart
@@ -3399,8 +3379,8 @@ food_acc_rzn_local_prodDecrChart
         .group(food_acc_rzn_local_prodDecrGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_noFuelChart
@@ -3408,8 +3388,8 @@ food_acc_rzn_noFuelChart
         .group(food_acc_rzn_noFuelGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_acc_rzn_acc_nofuelChart
@@ -3417,8 +3397,8 @@ food_acc_rzn_acc_nofuelChart
         .group(food_acc_rzn_acc_nofuelGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_IDPs_foodChart
@@ -3426,8 +3406,8 @@ food_IDPs_foodChart
         .group(food_IDPs_foodGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(colorone)
         .elasticX(true)
@@ -3440,8 +3420,8 @@ food_pop_food_preconfChart
         .group(food_pop_food_preconfGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
@@ -3456,8 +3436,8 @@ food_avg_riceChart
         .group(food_avg_riceGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,8]))
@@ -3472,8 +3452,8 @@ food_avg_goatChart
         .group(food_avg_goatGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#E64143"])
       .x(d3.scale.linear().domain([0,10]))
@@ -3488,8 +3468,8 @@ food_avg_chickehChart
         .group(food_avg_chickehGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#E64143"])
         .colors(["#E64143"])
@@ -3505,8 +3485,8 @@ food_avg_oilChart
         .group(food_avg_oilGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		 .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
 		.outerPadding(0.15)
@@ -3520,8 +3500,8 @@ food_avg_sugarChart
         .group(food_avg_sugarGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		 .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
 		.outerPadding(0.15)
@@ -3535,8 +3515,8 @@ food_avg_tomatoChart
         .group(food_avg_tomatoGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		 .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
 		.outerPadding(0.15)
@@ -3550,8 +3530,8 @@ food_avg_cucumberChart
         .group(food_avg_cucumberGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3566,8 +3546,8 @@ food_avg_bread_privChart
         .group(food_avg_bread_privGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3582,8 +3562,8 @@ food_avg_bread_pubChart
         .group(food_avg_bread_pubGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3598,8 +3578,8 @@ food_avg_flourChart
         .group(food_avg_flourGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3614,8 +3594,8 @@ food_avg_milkChart
         .group(food_avg_milkGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3630,8 +3610,8 @@ food_avg_eggChart
         .group(food_avg_eggGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
    .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3646,8 +3626,8 @@ food_avg_babyChart
         .group(food_avg_babyGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
  .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3662,8 +3642,8 @@ food_avg_pepsiChart
         .group(food_avg_pepsiGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(["#E64143"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3678,8 +3658,8 @@ food_avgB_riceChart
         .group(food_avgB_riceGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(["#808080"])
         .x(d3.scale.linear().domain([0,8]))
@@ -3694,8 +3674,8 @@ food_avgB_goatChart
         .group(food_avgB_goatGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(["#808080"])
       .x(d3.scale.linear().domain([0,10]))
@@ -3710,8 +3690,8 @@ food_avgB_chickehChart
         .group(food_avgB_chickehGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3726,8 +3706,8 @@ food_avgB_oilChart
         .group(food_avgB_oilGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3742,8 +3722,8 @@ food_avgB_sugarChart
         .group(food_avgB_sugarGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3758,8 +3738,8 @@ food_avgB_tomatoChart
         .group(food_avgB_tomatoGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3774,8 +3754,8 @@ food_avgB_cucumberChart
         .group(food_avgB_cucumberGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3790,8 +3770,8 @@ food_avgB_bread_privChart
         .group(food_avgB_bread_privGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3806,8 +3786,8 @@ food_avgB_bread_pubChart
         .group(food_avgB_bread_pubGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
         .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3822,8 +3802,8 @@ food_avgB_flourChart
         .group(food_avgB_flourGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3838,8 +3818,8 @@ food_avgB_milkChart
         .group(food_avgB_milkGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3854,8 +3834,8 @@ food_avgB_eggChart
         .group(food_avgB_eggGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3870,8 +3850,8 @@ food_avgB_babyChart
         .group(food_avgB_babyGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3886,8 +3866,8 @@ food_avgB_pepsiChart
         .group(food_avgB_pepsiGP)
          .width(300)
         .height(165)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(["#808080"])
         .x(d3.scale.linear().domain([0,10]))
@@ -3904,8 +3884,8 @@ food__bread_sourceChart
         .group(food__bread_sourceGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
@@ -3918,8 +3898,8 @@ food__day_nobreadprivChart
         .group(food__day_nobreadprivGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
@@ -3932,8 +3912,8 @@ food__day_nobreadpubChart
         .group(food__day_nobreadpubGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
@@ -3946,8 +3926,8 @@ food_rnz_flourNAChart
         .group(food_rnz_flourNAGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_flourExpChart
@@ -3955,8 +3935,8 @@ food_rnz_flourExpChart
         .group(food_rnz_flourExpGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_yeastNAChart
@@ -3964,8 +3944,8 @@ food_rnz_yeastNAChart
         .group(food_rnz_yeastNAGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_yeastExpChart
@@ -3973,8 +3953,8 @@ food_rnz_yeastExpChart
         .group(food_rnz_yeastExpGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_wheatNAChart
@@ -3982,8 +3962,8 @@ food_rnz_wheatNAChart
         .group(food_rnz_wheatNAGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_wheatExpChart
@@ -3991,8 +3971,8 @@ food_rnz_wheatExpChart
         .group(food_rnz_wheatExpGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_elecNAChart
@@ -4000,8 +3980,8 @@ food_rnz_elecNAChart
         .group(food_rnz_elecNAGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_rnz_elecEXPChart
@@ -4009,8 +3989,8 @@ food_rnz_elecEXPChart
         .group(food_rnz_elecEXPGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 food_SAMChart
@@ -4018,8 +3998,8 @@ food_SAMChart
         .group(food_SAMGP) 
          .width(Wbigpie)
         .height(Hbigpie)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(inbipie)
 	.colors(dummies)
         .renderLabel(true)
@@ -4032,8 +4012,8 @@ liv_inc_stable_empChart
         .group(liv_inc_stable_empGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_unstable_empChart
@@ -4041,8 +4021,8 @@ liv_inc_unstable_empChart
         .group(liv_inc_unstable_empGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_farm_ownerChart
@@ -4050,8 +4030,8 @@ liv_inc_farm_ownerChart
         .group(liv_inc_farm_ownerGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_bussChart
@@ -4059,8 +4039,8 @@ liv_inc_bussChart
         .group(liv_inc_bussGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_allowChart
@@ -4068,8 +4048,8 @@ liv_inc_allowChart
         .group(liv_inc_allowGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_sup_famChart
@@ -4077,8 +4057,8 @@ liv_inc_sup_famChart
         .group(liv_inc_sup_famGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_remitChart
@@ -4086,8 +4066,8 @@ liv_inc_remitChart
         .group(liv_inc_remitGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_savChart
@@ -4095,8 +4075,8 @@ liv_inc_savChart
         .group(liv_inc_savGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_aidChart
@@ -4104,8 +4084,8 @@ liv_inc_aidChart
         .group(liv_inc_aidGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_cashChart
@@ -4113,8 +4093,8 @@ liv_inc_cashChart
         .group(liv_inc_cashGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_inc_otherChart
@@ -4122,8 +4102,8 @@ liv_inc_otherChart
         .group(liv_inc_otherGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 
@@ -4135,8 +4115,8 @@ liv_currencyChart
         .group(liv_currencyGP)
         .width(Wbigpie)
         .height(Hbigpie)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
 		.innerRadius(inbipie)
 		 .colors(colorall)
@@ -4150,8 +4130,8 @@ liv_cop_beggChart
         .group(liv_cop_beggGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_loanChart
@@ -4159,8 +4139,8 @@ liv_cop_loanChart
         .group(liv_cop_loanGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_relativeChart
@@ -4168,8 +4148,8 @@ liv_cop_relativeChart
         .group(liv_cop_relativeGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_garbageChart
@@ -4177,8 +4157,8 @@ liv_cop_garbageChart
         .group(liv_cop_garbageGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_HhassetChart
@@ -4186,8 +4166,8 @@ liv_cop_HhassetChart
         .group(liv_cop_HhassetGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_skipmealChart
@@ -4195,8 +4175,8 @@ liv_cop_skipmealChart
         .group(liv_cop_skipmealGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_szemealChart
@@ -4204,8 +4184,8 @@ liv_cop_szemealChart
         .group(liv_cop_szemealGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_noEatChart
@@ -4213,8 +4193,8 @@ liv_cop_noEatChart
         .group(liv_cop_noEatGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 liv_cop_otherChart
@@ -4222,8 +4202,8 @@ liv_cop_otherChart
         .group(liv_cop_otherGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 		
@@ -4235,8 +4215,8 @@ liv_cop_otherChart
         .group(edu_prim_schoolGP)
         .width(250)
         .height(150)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
@@ -4248,8 +4228,8 @@ liv_cop_otherChart
         .group(edu_sec_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .renderLabel(true)
            .colors(color_educ)
@@ -4260,8 +4240,8 @@ liv_cop_otherChart
         .group(edu_univ_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
@@ -4273,8 +4253,8 @@ liv_cop_otherChart
         .group(edu_insti_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
@@ -4286,8 +4266,8 @@ liv_cop_otherChart
         .group(edu_High_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
@@ -4295,22 +4275,14 @@ liv_cop_otherChart
           .xAxis().ticks(4).tickFormat(d3.format("s"))
 		;
 ///rzn education
-Educ_All_children_access_education_servicesChart
-        .dimension(Educ_All_children_access_education_servicesDim)
-        .group(Educ_All_children_access_education_servicesGP) 
-         .width(donutwidth)
-        .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
-    .innerRadius(donutin) .colors(dummies)
-        .renderLabel(true);
+
 Educ_due_to_destruction_of_facilitiesChart
         .dimension(Educ_due_to_destruction_of_facilitiesDim)
         .group(Educ_due_to_destruction_of_facilitiesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_due_to_lack_of_teaching_staffChart
@@ -4318,8 +4290,8 @@ Educ_due_to_lack_of_teaching_staffChart
         .group(Educ_due_to_lack_of_teaching_staffGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_due_to_lack_of_school_suppliesChart
@@ -4327,8 +4299,8 @@ Educ_due_to_lack_of_school_suppliesChart
         .group(Educ_due_to_lack_of_school_suppliesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_facilities_used_for_alternative_purposesChart
@@ -4336,8 +4308,8 @@ Educ_facilities_used_for_alternative_purposesChart
         .group(Educ_facilities_used_for_alternative_purposesGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_Distance_to_services_is_too_farChart
@@ -4345,8 +4317,8 @@ Educ_Distance_to_services_is_too_farChart
         .group(Educ_Distance_to_services_is_too_farGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_Route_to_services_is_unsafeChart
@@ -4354,8 +4326,8 @@ Educ_Route_to_services_is_unsafeChart
         .group(Educ_Route_to_services_is_unsafeGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_Services_have_no_spaces_availableChart
@@ -4363,8 +4335,8 @@ Educ_Services_have_no_spaces_availableChart
         .group(Educ_Services_have_no_spaces_availableGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_Parents_do_not_approve_of_curriculumChart
@@ -4372,8 +4344,8 @@ Educ_Parents_do_not_approve_of_curriculumChart
         .group(Educ_Parents_do_not_approve_of_curriculumGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 Educ_otherChart
@@ -4381,8 +4353,8 @@ Educ_otherChart
         .group(Educ_otherGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return Math.floor(d.value / all.value() * 100); })
-	    .title(function(d) { return d.key + " (" + Math.floor(d.value / all.value() * 100) + "%)"; })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
 
@@ -4395,6 +4367,8 @@ Disp_host_confescaChart
         .group(Disp_host_confescaGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4403,6 +4377,8 @@ Disp_host_conf_moneyChart
         .group(Disp_host_conf_moneyGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4411,6 +4387,8 @@ Disp_host_conf_incomeChart
         .group(Disp_host_conf_incomeGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4419,6 +4397,8 @@ Disp_host_conf_assetsChart
         .group(Disp_host_conf_assetsGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4427,6 +4407,8 @@ Disp_host_conf_borderChart
         .group(Disp_host_conf_borderGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4435,6 +4417,8 @@ Disp_host_conf_serviceChart
         .group(Disp_host_conf_serviceGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4443,6 +4427,8 @@ Disp_host_conf_arrestChart
         .group(Disp_host_conf_arrestGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
 ;
@@ -4451,8 +4437,44 @@ Disp_host_conf_otherChart
         .group(Disp_host_conf_otherGP) 
          .width(donutwidth)
         .height(donutheight)
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin)
 	.colors(dummies)
+;
+
+
+Disp_min_cost_borderChart
+        .dimension(Disp_min_cost_borderDim)
+        .group(Disp_min_cost_borderGP) 
+         .width(499)
+        .height(199)
+       	.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		////////////filter///////////////    
+          .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,20]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d +"K"})
+;
+Disp_max_cost_borderChart
+        .dimension(Disp_max_cost_borderDim)
+        .group(Disp_max_cost_borderGP)  
+		.width(499)
+        .height(199)
+       	.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		////////////filter///////////////    
+          .colors(["#808080"])
+        .x(d3.scale.linear().domain([0,20]))
+		.outerPadding(0.15)
+		.elasticY(true)
+		.xAxisLabel("SYP", 5)
+		.yAxisLabel("% of villages", 30)
+		.xAxis().ticks(5).tickFormat(function(d) {return d+"K"})
 ;
 
     dc.renderAll();
