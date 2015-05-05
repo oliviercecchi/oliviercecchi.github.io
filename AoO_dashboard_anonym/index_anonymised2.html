@@ -79,7 +79,7 @@ a:hover{text-decoration: underline;}
 		
       </div> 
 	<div class="span12 pull-right" id="about">
-      	<span></span><h6>Area of Origin data collected during April 2015</h6>
+      	<span></span><h6>Area of Origin data collected during <a href="AoO_201504.csv">April 2015 </a></h6>
     </div>
 	    <div class="row-fluid">
 		<div class="span6">
@@ -886,7 +886,7 @@ var colorshel = d3.scale.ordinal()
 	.domain(["Apartment house shared","Cave natural shelter","Collective public space not for shelter",
 			"Independent apartment or house","Not applicable","Private space not for shelter",
 			"Tent","Unfinished apartment or house"])
-    .range(["#E64143","#E64143","#fadada",
+    .range(["#E3E4E5","#E64143","#fadada",
 			"#c5b9a0","#667A95","#E7E2D6",
 			"#F2A0A1","#D3CAB7"]);
 		 
@@ -894,7 +894,7 @@ var colorsheldam = d3.scale.ordinal()
 	.domain(["Apartment house shared","Cave natural shelter","Collective public space not for shelter",
 			"Independent apartment or house","Not applicable","Private space not for shelter",
 			"Tent","Unfinished apartment or house","There are no damaged shelters"])
-    .range(["#E64143","#E64143","#fadada",
+    .range(["#E3E4E5","#E64143","#fadada",
 			"#c5b9a0","#D3CAB7","#E7E2D6",
 			"#F2A0A1","#D3CAB7","#A5C89F"]);
 
@@ -1686,20 +1686,20 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
     	
         .dimension(PreConfPopDim)
         .group(PreConfPopGroup)      		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 	
 		  ////.ordering(function (p) { return -p.value;})
           .elasticX(true)
           .renderLabel(true)
            .colors(hostcolor)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
     Idp_presChart
         .width(250)
         .height(100)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
       //  .innerRadius(donutin)
         .dimension(IDP_presDIM)
@@ -1707,7 +1707,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
            .colors(dummies)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
     GovOriChart
@@ -1715,7 +1715,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(GovOriDim)
         .group(GovOriGroup)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
@@ -1724,7 +1724,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .elasticX(true)
         .renderLabel(true)
           .colors(col_ori)
-        .xAxis().ticks(4).tickFormat(d3.format("s"))
+        .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
     DistOriChart
@@ -1732,7 +1732,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(DistOriDim)
         .group(DistOriGroup)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
@@ -1741,7 +1741,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
           .colors(col_ori)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
     SubDistOriChart
@@ -1749,7 +1749,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(270)
         .dimension(SDOriDim)
         .group(SDOriGroup)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		.data(function(group) {
                         return group.top(10);
@@ -1758,7 +1758,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
           .colors(col_ori)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		  
 		  ;
 		  
@@ -1770,6 +1770,8 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
         .height(donutheight)
 		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+	    .label(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		//.legend(["VVV"])
        .innerRadius(donutin)
 	   .colors(dummies)
 		;
@@ -1777,23 +1779,23 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 		other_foreign_nationalsCT
         .dimension(other_foreign_nationalsDim)
         .group(other_foreign_nationalsGP)
-       .width(donutwidth)
+        .width(donutwidth)
         .height(donutheight) 
 		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
-       .innerRadius(donutin)
-         .colors(dummies)
+        .innerRadius(donutin)
+        .colors(dummies)
 		;
 		
 		employmentCT
         .dimension(employmentDim)
         .group(employmentGP)
-       .width(donutwidth)
+        .width(donutwidth)
         .height(donutheight)
 		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
-       .innerRadius(donutin)
-         .colors(dummies)
+        .innerRadius(donutin)
+        .colors(dummies)
 		;
 		
 		familyCT
@@ -2065,7 +2067,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
 	type_housing_idpsCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        .dimension(type_housing_idpsDim)
         .group(type_housing_idpsGP)
@@ -2073,13 +2075,13 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
            .colors(colorshel)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		
 		type_housing_pre_conf_popCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(type_housing_pre_conf_popDim)
         .group(type_housing_pre_conf_popGP)
@@ -2088,13 +2090,13 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
           .colors(colorshel)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		
 		type_housing_damagedCT
         .width(250)
         .height(250)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
        // .innerRadius(30)
         .dimension(type_housing_damagedDim)
@@ -2104,7 +2106,7 @@ expnCONFID_WASH.group(CONFID_WASHGP).valueAccessor(expCountCONFID_WASH);
           .elasticX(true)
           .renderLabel(true)
           .colors(colorsheldam)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 //////////////////////NFI
 		
@@ -2372,7 +2374,7 @@ NFI_lack_fuel_otherChart
 	    public_hospitalCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(public_hospitalDim)
         .group(public_hospitalGP)
@@ -2386,13 +2388,13 @@ NFI_lack_fuel_otherChart
         .elasticX(true)
         .renderLabel(true)
          .colors(colorhealth)
-        .xAxis().ticks(4).tickFormat(d3.format("s"))
+        .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		
 		private_hospitalCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 
         .dimension(private_hospitalDim)
@@ -2407,12 +2409,12 @@ NFI_lack_fuel_otherChart
           .elasticX(true)
           .renderLabel(true)
           .colors(colorhealth)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		primary_health_centreCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(primary_health_centreDim)
         .group(primary_health_centreGP)
@@ -2426,12 +2428,12 @@ NFI_lack_fuel_otherChart
           .elasticX(true)
           .renderLabel(true)
           .colors(colorhealth)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		mobile_clinicCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(mobile_clinicDim)
         .group(mobile_clinicGP)
@@ -2445,12 +2447,12 @@ NFI_lack_fuel_otherChart
           .elasticX(true)
           .renderLabel(true)
           .colors(colorhealth)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		private_clinicCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
@@ -2466,13 +2468,13 @@ NFI_lack_fuel_otherChart
           .elasticX(true)
           .renderLabel(true)
           .colors(colorhealth)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
         rzn_not_access_healthCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
@@ -2483,7 +2485,7 @@ NFI_lack_fuel_otherChart
           .elasticX(true)
           .renderLabel(true)
           .colors(colorone)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
 health_all_health_functioningChart
@@ -2899,7 +2901,7 @@ health_health_prob_otherChart
 	percent_birth_homeCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
        // .innerRadius(30)
@@ -2910,7 +2912,7 @@ health_health_prob_otherChart
           .elasticX(true)
           .renderLabel(true)
 			.colors(colorone)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		  //.legend(dc.legend())
 		;	
 
@@ -3215,7 +3217,7 @@ WASH_water_other_since_conflictChart
      water_sourceCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })        
         .dimension(water_sourceDim)
         .group(water_sourceGP)
@@ -3223,13 +3225,13 @@ WASH_water_other_since_conflictChart
           .elasticX(true)
           .renderLabel(true)
            .colors(price)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 		
 	water_statusCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; }) 
         .dimension(water_statusDim)
         .group(water_statusGP)
@@ -3237,7 +3239,7 @@ WASH_water_other_since_conflictChart
           .elasticX(true)
           .renderLabel(true)
            .colors(price)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 
      access_latrinesCT
@@ -3256,7 +3258,7 @@ WASH_water_other_since_conflictChart
 	dispose_garbageCT
         .width(250)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
         .dimension(dispose_garbageDim)
         .group(dispose_garbageGP)
@@ -3264,7 +3266,7 @@ WASH_water_other_since_conflictChart
           .elasticX(true)
           .renderLabel(true)
            .colors(price)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;	
 		
 		
@@ -3277,7 +3279,7 @@ food_obt_barteningChart
         .group(food_obt_barteningGP) 
          .width(donutwidth)
         .height(donutheight)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
     .innerRadius(donutin) .colors(dummies)
         .renderLabel(true);
@@ -3322,14 +3324,14 @@ food_market_pricesChart
         .group(food_market_pricesGP)
          .width(300)
         .height(100)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(dummies)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
 food_acc_rzn_noneChart
         .dimension(food_acc_rzn_noneDim)
@@ -3408,28 +3410,28 @@ food_IDPs_foodChart
         .group(food_IDPs_foodGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
           .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
 food_pop_food_preconfChart
         .dimension(food_pop_food_preconfDim)
         .group(food_pop_food_preconfGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
   
   //avg
@@ -3886,42 +3888,42 @@ food__bread_sourceChart
         .group(food__bread_sourceGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
 food__day_nobreadprivChart
         .dimension(food__day_nobreadprivDim)
         .group(food__day_nobreadprivGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
 food__day_nobreadpubChart
         .dimension(food__day_nobreadpubDim)
         .group(food__day_nobreadpubGP)
          .width(300)
         .height(200)        		
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
 		////////////filter///////////////    
          .colors(colorone)
         .elasticX(true)
         .renderLabel(true)
          ////.ordering(function (p) { return -p.value;})
-        .xAxis().ticks(4).tickFormat(d3.format('s'))
+        .xAxis().ticks(4).tickFormat(d3.format('%'))
   ;
 food_rnz_flourNAChart
         .dimension(food_rnz_flourNADim)
@@ -4217,64 +4219,99 @@ liv_cop_otherChart
         .group(edu_prim_schoolGP)
         .width(250)
         .height(150)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		.ordering(function(d) {
+			if(d.key == "Functioning / Providing lessons") return 1;
+			else if(d.key == "Partially functioning") return 2;
+			else if(d.key == "Not functioning") return 3;
+			else if(d.key == "No information") return 5;
+			else if(d.key == "Not available") return 4;
+			})
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
            .colors(color_educ)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 	edu_sec_schoolChart
         .dimension(edu_sec_schoolDim)
         .group(edu_sec_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		.ordering(function(d) {
+			if(d.key == "Functioning / Providing lessons") return 1;
+			else if(d.key == "Partially functioning") return 2;
+			else if(d.key == "Not functioning") return 3;
+			else if(d.key == "No information") return 5;
+			else if(d.key == "Not available") return 4;
+			})
 		////////////filter///////////////    
           .renderLabel(true)
            .colors(color_educ)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 	edu_univ_schoolChart
         .dimension(edu_univ_schoolDim)
         .group(edu_univ_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		.ordering(function(d) {
+			if(d.key == "Functioning / Providing lessons") return 1;
+			else if(d.key == "Partially functioning") return 2;
+			else if(d.key == "Not functioning") return 3;
+			else if(d.key == "No information") return 5;
+			else if(d.key == "Not available") return 4;
+			})
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
            .colors(color_educ)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 	edu_insti_schoolChart
         .dimension(edu_insti_schoolDim)
         .group(edu_insti_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value(),1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		.ordering(function(d) {
+			if(d.key == "Functioning / Providing lessons") return 1;
+			else if(d.key == "Partially functioning") return 2;
+			else if(d.key == "Not functioning") return 3;
+			else if(d.key == "No information") return 5;
+			else if(d.key == "Not available") return 4;
+			})
 		////////////filter///////////////    
           .elasticX(true)
           .renderLabel(true)
            .colors(color_educ)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 	edu_High_schoolChart
         .dimension(edu_High_schoolDim)
         .group(edu_High_schoolGP)
         .width(250)
          .height(150)
-		.valueAccessor(function(d) { return d3.round(d.value / all.value() * 100,1); })
+		.valueAccessor(function(d) { return d3.round(d.value / all.value() ,1); })
 	    .title(function(d) { return d.key + " (" + d3.round(d.value / all.value() * 100,1) + "%)"; })
+		.ordering(function(d) {
+			if(d.key == "Functioning / Providing lessons") return 1;
+			else if(d.key == "Partially functioning") return 2;
+			else if(d.key == "Not functioning") return 3;
+			else if(d.key == "No information") return 5;
+			else if(d.key == "Not available") return 4;
 		////////////filter///////////////    
+			})
           .elasticX(true)
           .renderLabel(true)
            .colors(color_educ)
-          .xAxis().ticks(4).tickFormat(d3.format("s"))
+          .xAxis().ticks(4).tickFormat(d3.format("%"))
 		;
 ///rzn education
 
