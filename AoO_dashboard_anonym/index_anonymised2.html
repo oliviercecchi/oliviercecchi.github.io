@@ -64,7 +64,7 @@ a:hover{text-decoration: underline;}
 			</div>
 		  </div>
 		  
-		  <div id="mapheader2"><a id="dgoveader" href="javascript:togglegov('ginset','dgoveader');"><small>Show Governorate</small></a>
+		  <div id="mapheader2"><a id="dgoveader" href="javascript:togglegov('ginset','dgoveader');"><small>Show Governorates</small></a>
 		 <div id="ginset"style = "position:relative;display:none">
 		  <div id="govinset"style = "position:relative"><p>Governorate<p></div>	
 		  </div>
@@ -164,171 +164,33 @@ a:hover{text-decoration: underline;}
 
 	 </div>
   </div>
-  
-  <div class="row-fluid"><h3><img src="image/ic_shelter.png" width="25" height="25"style="border-width:10px;"><a> </a>Shelter <small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
-	<a id="shelt_head" href="javascript:toggle('shelt_content','shelt_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Shelter'></span>/3</a></small></h3>
-    <div class="row-fluid" id="shelt_content"style="display: none">
-      <div id="type_housing_idps"><p>Most common type of housing</br>- <strong style="color:#DA4400">IDPs</strong></p></div>
-	  <div id="type_housing_pre_conf_pop"><p>Most common type of housing</br> - <strong style="color:#FF9933">host population</strong></p></div>
-	  <div id="type_housing_damaged"><p>Most common type of housing <strong style="color:#FF9933">host population</strong></br>moved to when original housing damaged</p></div>   
+    <div class="row-fluid"><h3><img src="image/ic_education.png" width="25" height="25"style="border-width:10px;"><a> </a>Education<small> <a
+    href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+	<a id="Education_head" href="javascript:toggle('Education_content','Education_head');" >Show section</a>
+| <a style="color:grey">Average confidence level: <span id='meanCONFID_Education'></span>/3</a></small></h3>
+	 <div class="row-fluid" id="Education_content"style="display: none">
+		<div class="row-fluid">
+		  <div id="edu_prim_schoolDIV"><p>Primary school - status</p></div>
+		  <div id="edu_sec_schoolDIV"><p>Secondary school - status</p></div>
+		  <div id="edu_High_schoolDIV"><p>High school - status</p></div>
+		  <div id="edu_univ_schoolDIV"><p>University - status</p></div>
+		  <div id="edu_insti_schoolDIV"><p>Institute - status</p></div>
+		</div>
+		<div class="row-fluid"><h4>Most common reasons why school-aged children are not attending school</h4>
+			  <!-- TO REMOVE -->
+			  <div id='Educ_due_to_destruction_of_facilitiesDIV'><p>Destruction </br>of facilities?</p></div>
+			  <div id='Educ_due_to_lack_of_teaching_staffDIV'><p>Lack of teaching</br> staff?</p></div>
+			  <div id='Educ_due_to_lack_of_school_suppliesDIV'><p>Lack of school</br> supplies?</p></div>
+			  <div id='Educ_facilities_used_for_alternative_purposesDIV'><p>Facilities used for</br> alternative purposes?</p></div>
+			  <div id='Educ_Distance_to_services_is_too_farDIV'><p>Distance to school </br>is too far?</p></div>
+			  <div id='Educ_Route_to_services_is_unsafeDIV'><p>Route to school </br>is unsafe?</p></div>
+			  <div id='Educ_Services_have_no_spaces_availableDIV'><p>School has no</br>spaces available?</p></div>
+			  <div id='Educ_Parents_do_not_approve_of_curriculumDIV'><p>Parents do not approve</br> the curriculum?</p></div>
+			  <div id='Educ_otherDIV'><p>Other?</br></br></p></div>
+		</div>
     </div>
   </div>
-   
-  <div class="row-fluid"><h3><img src="image/ic_NFI2.png" width="25" height="25"style="border-width:10px;"><a> </a>Non-Food Item <small> <a
-    href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
-	<a id="nfi_head" href="javascript:toggle('nfi_content','nfi_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_NFI'></span>/3</a></small></h3>
-    <div class="row-fluid" id="nfi_content"style="display: none">
-    <div class="row-fluid">
-		<div id="elec_before_conflict"><p>Primary source of electricity </br>Before the conflict</p></div>
-		<div id="elec_prev_month"><p>Primary source of electricity </br>March 2015</p></div>
-	</div> 
-<div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets in March 2015</h4>
-	  <div id="price_butane"><p>Butane gas (1 cannister)</br></br></p></div>
-	  <div id="price_kerosene"><p>Kerosene (1 litre)</br></br></p></div>
-	  <div id="price_propane"><p>Propane gas (1 cannister)</br></br></p></div>
-	  <div id="price_roofing"><p>Corrugated iron sheets </br> (3.2 square metre)</p></div>
-	  <div id="price_coal"><p>Coal - (1 kg)</br></br></p></div>
-	  <div id="price_fire_wood"><p>Fire wood (1 tonne) </br></br></p></div>
-	  <div id="price_wood_constr"><p>Wood for construction </br>(1 metre)</p></div>
-	  <div id="price_cement"><p>Cement (50 kg)</br></br></p></div>
-	  <div id="price_cement"><p>Cement (50 kg)</br></br></p></div>
- </div>
- <div class="row-fluid"><h4>Most common coping strategies people are using to cope with lack of fuel</h4>
-	  <div id='NFI_burn_furn_withoutDIV'><p>Burning furniture without use?</br></br></p></div>
-	  <div id='NFI_burn_furn_withDIV'><p>Burning furniture with use?</br></br></p></div>
-	  <div id='NFI_burn_agr_apparelDIV'><p>Burning agricultural /</br> other productive assets?</p></div>
-	  <div id='NFI_burn_clothesDIV'><p>Burning clothes?</br></br></p></div>
-	  <div id='NFI_burn_plascticsDIV'><p>Burning plastics?</br></br></p></div>
-	  <div id='NFI_burn_wasteDIV'><p>Burning waste?</br></br></p></div>
-	  <div id='NFI_lack_fuel_otherDIV'><p>Other?</br></br></p></div>
-	   </div>
-  </div>
-</div>
-  
-  <div class="row-fluid"><h3><img src="image/ic_health.png" width="25" height="25"style="border-width:10px;"><a> </a>Health<small>  <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
-  <a id="health_head" href="javascript:toggle('health_content','health_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Health'></span>/3</a></small></h3>
-    <div class="row-fluid" id="health_content"style="display: none">
-    <div class="row-fluid">
-      <div id="public_hospital"><p>Public hospitals - status</p></div>
-      <div id="private_hospital"><p>Private hospitals - status</p></div>
-      <div id="primary_health_centre"><p>Primary health centres - status</p></div>
-      <div id="private_clinic"><p>Private clinics - status</p></div>
-      <div id="mobile_clinic"><p>Mobile clinics - status</p></div>
-	</div>
-    <div class="row-fluid"><h4>Most common reasons why health care facilities are not fully functioning</h4>
-		<div id='health_all_health_functioningDIV'><p style="color:green">All functioning</p></div>
-		  <!-- TO REMOVE -->
-		  <div id='health_no_health_facilitiesDIV'><p>No health facilities?</p></div>
-		  <div id='health_lack_funds_healthDIV'><p>Lack funds?</p></div>
-		  <div id='health_no_elec_healthDIV'><p>Lack of electricity?</p></div>
-		  <div id='health_no_medecineDIV'><p>Lack of medecine?</p></div>
-		  <div id='health_no_water_healthDIV'><p>Lack of water?</p></div>
-		  <div id='health_no_equipement_healthDIV'><p>Lack of equipments?</p></div>
-		  <div id='health_no_medical_staffDIV'><p>Lack of medical staff?</p></div>
-		  <div id='health_no_female_staffDIV'><p>Lack of female staff?</p></div>
-		  <div id='health_facilities_damagedDIV'><p>Facilities damaged?</br></br></p></div>
-		  <div id='health_sed_alternative_healthDIV'><p>Facilities used for</br>  alternative purpose?</p></div>
-		  <div id='health_other_healthDIV'><p>Other?</br></br></p></div>
-	</div>
-    <div class="row-fluid"><h4>Health care services available in the village</h4>
-		  
-		  <div id='health_child_immunizationDIV'><p>Child immunization?</p></div>
-		  <div id='health_diarrhea_managementDIV'><p>Diarrhea management?</p></div>
-		  <div id='health_emergency_careDIV'><p>Emergency care?</p></div>
-		  <div id='health_skilled_careDIV'><p>Skilled childbirth care?</p></div>
-		  <div id='health_surgeryDIV'><p>Surgery?</p></div>
-		  <div id='health_diabetes_careDIV'><p>Diabetes care?</p></div>
-	</div>
-    <div class="row-fluid">
-		<div id="rzn_not_access_health"><p>Most common reason why people can</br>not access the health care facilities</p></div>
-	</div>
-	<div class="row-fluid"><h4>Average price of Health care items on village markets in March 2015</h4>
-		<div id="health_price_antibio"><p>Antibiotics - average price</br>(one packet)</p></div>
-		<div id="health_price_analgesics"><p>Analgesics (painkillers - average price</br>(one packet)</p></div>
-		<div id="health_price_ors"><p>Oral rehydration salts (ORS) - average price</br>(one packet)</p></div>
-		<div id="health_ppl_pay"><p>People in the village are paying for consultations,</br>  treatment procedures and drugs</p></div>
-	</div>
-    <div class="row-fluid"><h4>Most common health problems in the village</h4>
-		  <div id='health_disabilitiesDIV'><p>Disabilities?</br></br></p></div>
-		  <div id='health_diarrheaDIV'><p>Diarrhea?</br></br></p></div>
-		  <div id='health_skin_diseaseDIV'><p>Skin disease?</br></br></p></div>
-		  <div id='health_leichmaniasisDIV'><p>Leichmaniasis?</br></br></p></div>
-		  <div id='health_measlesDIV'><p>Measles?</br></br></p></div>
-		  <div id='health_communicable_diseasesDIV'><p>Communicable diseases?</br></br></p></div>
-		  <div id='health_chronic_diseasesDIV'><p>Chronic diseases?</br></br></p></div>
-		  <div id='health_maternal_health_issuesDIV'><p>Maternal health issues?</br></br></p></div>
-		  <div id='health_injuriesDIV'><p>Injuries?</br></br></p></div>
-		  <div id='health_respiratory_infectDIV'><p>Respiratory infection?</br></br></p></div>
-		  <div id='health_feverDIV'><p>Fever?</br></br></p></div>
-		  <div id='health_polioDIV'><p>Polio?</br></br></p></div>
-		  <div id='health_malnutritionDIV'><p>Malnutrition?</br></br></p></div>
-		  <div id='health_severe_less_5DIV'><p>Severe disease affecting </br> children aged less than 5?</p></div>
-		  <div id='health_psycho_traumaDIV'><p>Psychological trauma?</br></br></p></div>
-		  <div id='health_health_prob_otherDIV'><p>Other?</br></br></p></div>
-	</div>
-     
-	  
-	  
-	  <div id="percent_birth_home"><p>Percentage of pregnant women delivering</br>  babies at home without assistance</br>  from a midwife / trained nurse</p></div>
-	  <div id="sexual_violence"><p>Sexual violence reported in the village</p></div>
-
-    </div>
-  </div>
-  
-  <div class="row-fluid"><h3><img src="image/ic_WASH.png" width="25" height="25"style="border-width:10px;"><a> </a>WASH<small> <a
-         href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
-		 <a id="WASH_head" href="javascript:toggle('WASH_content','WASH_head');">Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
-    <div class="row-fluid" id="WASH_content"style="display: none">
-    <div class="row-fluid"><h4>Average price of WASH items on village markets in March 2015</h4>
-      <div id="price_soap"><p>Soap (one bar)</p></div>
-      <div id="price_jerrycan"><p>Jerry can (1)</p></div>
-      <div id="price_laundry"><p>Laundry powder (1kg)</p></div>
-      <div id="price_napkins"><p>Sanitary napkins / pads (1 pack of 9)</p></div>
-      <div id="price_diapers"><p>Disposable diapers (1kg)</p></div>
-	  <div id="coast_water_network"><p>Water network (1 cubic metre)</p></div>
-      <div id="coast_bottled_water"><p>Bottled water (1 litre)</p></div>
-      <div id="coast_public_water_truck"><p>Water trucking - public / subsidised (1 cubic metre)</p></div>
-      <div id="coast_private_water_truck"><p>Water trucking - private (1 cubic metre)</p></div>
-	  
-	</div>
-    <div class="row-fluid"><h4>Access to water and sanitation</h4>	  
-	<div id="water_source"><p>Most common drinking water source</p></div>	 
-	 <div id="water_status"><p>Status of water from </br> most common source accessed</p></div>
-	  <div id="access_latrines"><p>Access to latrines</p></div>
-	  <div id="dispose_garbage"><p>Most common way people </br>dispose of garbage</p></div>
-	</div>
-    <div class="row-fluid">
-    <div class="span6">
-    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since March 2015</h4>
-	  <!-- TO REMOVE -->
-	  <div id='WASH_water_system_damagedDIV'><p>Water system damaged?</br></br></p></div>
-	  <div id='WASH_water_lack_elecDIV'><p>Lack of electricity?</br></br></p></div>
-	  <div id='WASH_water_shortage_chlorineDIV'><p>Lack of chlorine?</br></br></p></div>
-	  <div id='WASH_water_lack_fuelDIV'><p>Lack of fuel?</br></br></p></div>
-	  <div id='WASH_water_treatment_damagedDIV'><p>Water treatment </br>station damaged?</p></div>
-	  <div id='WASH_water_otherDIV'><p>Other?</br></br></p></div>
-	</div>
-    </div>
-    <div class="span6">
-    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since the conflict began</h4>
-	  <div id='WASH_water_system_damaged_since_conflictDIV'><p>Water system damaged?</br></br></p></div>
-	  <div id='WASH_water_lack_elec_since_conflictDIV'><p>Lack of electricity?</br></br></p></div>
-	  <div id='WASH_water_shortage_chlorine_since_conflictDIV'><p>Lack of chlorine?</br></br></p></div>
-	  <div id='WASH_water_lack_fuel_since_conflictDIV'><p>Lack of fuel?</br></br></p></div>
-	  <div id='WASH_water_treatment_damaged_since_conflictDIV'><p>Water treatment </br>station damaged?</p></div>
-	  <div id='WASH_water_other_since_conflictDIV'><p>Other?</br></br></p></div>
-	</div>
-	  
-    </div>
-    </div>
-  </div>
-  </div>
-  
-  <div class="row-fluid"><h3><img src="image/ic_food.png" width="25" height="25"style="border-width:10px;"><a> </a>Food Security<small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+   <div class="row-fluid"><h3><img src="image/ic_food.png" width="25" height="25"style="border-width:10px;"><a> </a>Food Security<small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
   <a id="Food_head" href="javascript:toggle('Food_content','Food_head');"  >Show section</a>
 | <a style="color:grey">Average confidence level: <span id='meanCONFID_Food_Security'></span>/3</a></small></h3>
     <div class="row-fluid" id="Food_content"style="display: none">
@@ -412,12 +274,80 @@ a:hover{text-decoration: underline;}
     </div> 
     </div>
     </div>
- 
+	<div class="row-fluid"><h3><img src="image/ic_health.png" width="25" height="25"style="border-width:10px;"><a> </a>Health<small>  <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
+  <a id="health_head" href="javascript:toggle('health_content','health_head');" >Show section</a>
+| <a style="color:grey">Average confidence level: <span id='meanCONFID_Health'></span>/3</a></small></h3>
+    <div class="row-fluid" id="health_content"style="display: none">
+    <div class="row-fluid">
+      <div id="public_hospital"><p>Public hospitals - status</p></div>
+      <div id="private_hospital"><p>Private hospitals - status</p></div>
+      <div id="primary_health_centre"><p>Primary health centres - status</p></div>
+      <div id="private_clinic"><p>Private clinics - status</p></div>
+      <div id="mobile_clinic"><p>Mobile clinics - status</p></div>
+	</div>
+    <div class="row-fluid"><h4>Most common reasons why health care facilities are not fully functioning</h4>
+		<div id='health_all_health_functioningDIV'><p style="color:green">All functioning</p></div>
+		  <!-- TO REMOVE -->
+		  <div id='health_no_health_facilitiesDIV'><p>No health facilities?</p></div>
+		  <div id='health_lack_funds_healthDIV'><p>Lack funds?</p></div>
+		  <div id='health_no_elec_healthDIV'><p>Lack of electricity?</p></div>
+		  <div id='health_no_medecineDIV'><p>Lack of medecine?</p></div>
+		  <div id='health_no_water_healthDIV'><p>Lack of water?</p></div>
+		  <div id='health_no_equipement_healthDIV'><p>Lack of equipments?</p></div>
+		  <div id='health_no_medical_staffDIV'><p>Lack of medical staff?</p></div>
+		  <div id='health_no_female_staffDIV'><p>Lack of female staff?</p></div>
+		  <div id='health_facilities_damagedDIV'><p>Facilities damaged?</br></br></p></div>
+		  <div id='health_sed_alternative_healthDIV'><p>Facilities used for</br>  alternative purpose?</p></div>
+		  <div id='health_other_healthDIV'><p>Other?</br></br></p></div>
+	</div>
+    <div class="row-fluid"><h4>Health care services available in the village</h4>
+		  
+		  <div id='health_child_immunizationDIV'><p>Child immunization?</p></div>
+		  <div id='health_diarrhea_managementDIV'><p>Diarrhea management?</p></div>
+		  <div id='health_emergency_careDIV'><p>Emergency care?</p></div>
+		  <div id='health_skilled_careDIV'><p>Skilled childbirth care?</p></div>
+		  <div id='health_surgeryDIV'><p>Surgery?</p></div>
+		  <div id='health_diabetes_careDIV'><p>Diabetes care?</p></div>
+	</div>
+    <div class="row-fluid">
+		<div id="rzn_not_access_health"><p>Most common reason why people can</br>not access the health care facilities</p></div>
+	</div>
+	<div class="row-fluid"><h4>Average price of Health care items on village markets in March 2015</h4>
+		<div id="health_price_antibio"><p>Antibiotics - average price</br>(one packet)</p></div>
+		<div id="health_price_analgesics"><p>Analgesics (painkillers - average price</br>(one packet)</p></div>
+		<div id="health_price_ors"><p>Oral rehydration salts (ORS) - average price</br>(one packet)</p></div>
+		<div id="health_ppl_pay"><p>People in the village are paying for consultations,</br>  treatment procedures and drugs</p></div>
+	</div>
+    <div class="row-fluid"><h4>Most common health problems in the village</h4>
+		  <div id='health_disabilitiesDIV'><p>Disabilities?</br></br></p></div>
+		  <div id='health_diarrheaDIV'><p>Diarrhea?</br></br></p></div>
+		  <div id='health_skin_diseaseDIV'><p>Skin disease?</br></br></p></div>
+		  <div id='health_leichmaniasisDIV'><p>Leichmaniasis?</br></br></p></div>
+		  <div id='health_measlesDIV'><p>Measles?</br></br></p></div>
+		  <div id='health_communicable_diseasesDIV'><p>Communicable diseases?</br></br></p></div>
+		  <div id='health_chronic_diseasesDIV'><p>Chronic diseases?</br></br></p></div>
+		  <div id='health_maternal_health_issuesDIV'><p>Maternal health issues?</br></br></p></div>
+		  <div id='health_injuriesDIV'><p>Injuries?</br></br></p></div>
+		  <div id='health_respiratory_infectDIV'><p>Respiratory infection?</br></br></p></div>
+		  <div id='health_feverDIV'><p>Fever?</br></br></p></div>
+		  <div id='health_polioDIV'><p>Polio?</br></br></p></div>
+		  <div id='health_malnutritionDIV'><p>Malnutrition?</br></br></p></div>
+		  <div id='health_severe_less_5DIV'><p>Severe disease affecting </br> children aged less than 5?</p></div>
+		  <div id='health_psycho_traumaDIV'><p>Psychological trauma?</br></br></p></div>
+		  <div id='health_health_prob_otherDIV'><p>Other?</br></br></p></div>
+	</div>
+	  <div id="percent_birth_home"><p>Percentage of pregnant women delivering</br>  babies at home without assistance</br>  from a midwife / trained nurse</p></div>
+	  <div id="sexual_violence"><p>Sexual violence reported in the village</p></div>
+    </div>
+  </div>
   
- <div class="row-fluid"><h3><img src="image/ic_livelihood.png" width="25" height="25"style="border-width:10px;"><a> </a>Livelihoods<small> <a
+
+  
+  
+  <div class="row-fluid"><h3><img src="image/ic_livelihood.png" width="25" height="25"style="border-width:10px;"><a> </a>Livelihoods<small> <a
      href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	 <a id="Livelihoods_head" href="javascript:toggle('Livelihoods_content','Livelihoods_head');"  >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Livelihoods'></span>/3</a></small></h3>
+	| <a style="color:grey">Average confidence level: <span id='meanCONFID_Livelihoods'></span>/3</a></small></h3>
     <div class="row-fluid" id="Livelihoods_content"style="display: none">
 		 <div  class="row-fluid"><h4>Most common income/resources used by people to cover essential needs</h4>
 			  <div id='liv_inc_stable_empDIV'><p>Stable employment?</br></br></p></div>
@@ -448,33 +378,105 @@ a:hover{text-decoration: underline;}
 		 </div>
     </div>
   </div>
-   
-  <div class="row-fluid"><h3><img src="image/ic_education.png" width="25" height="25"style="border-width:10px;"><a> </a>Education<small> <a
-    href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
-	<a id="Education_head" href="javascript:toggle('Education_content','Education_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Education'></span>/3</a></small></h3>
-	 <div class="row-fluid" id="Education_content"style="display: none">
-		<div class="row-fluid">
-		  <div id="edu_prim_schoolDIV"><p>Primary school - status</p></div>
-		  <div id="edu_sec_schoolDIV"><p>Secondary school - status</p></div>
-		  <div id="edu_High_schoolDIV"><p>High school - status</p></div>
-		  <div id="edu_univ_schoolDIV"><p>University - status</p></div>
-		  <div id="edu_insti_schoolDIV"><p>Institute - status</p></div>
-		</div>
-		<div class="row-fluid"><h4>Most common reasons why school-aged children are not attending school</h4>
-			  <!-- TO REMOVE -->
-			  <div id='Educ_due_to_destruction_of_facilitiesDIV'><p>Destruction </br>of facilities?</p></div>
-			  <div id='Educ_due_to_lack_of_teaching_staffDIV'><p>Lack of teaching</br> staff?</p></div>
-			  <div id='Educ_due_to_lack_of_school_suppliesDIV'><p>Lack of school</br> supplies?</p></div>
-			  <div id='Educ_facilities_used_for_alternative_purposesDIV'><p>Facilities used for</br> alternative purposes?</p></div>
-			  <div id='Educ_Distance_to_services_is_too_farDIV'><p>Distance to school </br>is too far?</p></div>
-			  <div id='Educ_Route_to_services_is_unsafeDIV'><p>Route to school </br>is unsafe?</p></div>
-			  <div id='Educ_Services_have_no_spaces_availableDIV'><p>School has no</br>spaces available?</p></div>
-			  <div id='Educ_Parents_do_not_approve_of_curriculumDIV'><p>Parents do not approve</br> the curriculum?</p></div>
-			  <div id='Educ_otherDIV'><p>Other?</br></br></p></div>
-		</div>
+  
+  <div class="row-fluid"><h3><img src="image/ic_NFI2.png" width="25" height="25"style="border-width:10px;"><a> </a>Non-Food Items <small> <a
+    href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
+	<a id="nfi_head" href="javascript:toggle('nfi_content','nfi_head');" >Show section</a>
+| <a style="color:grey">Average confidence level: <span id='meanCONFID_NFI'></span>/3</a></small></h3>
+    <div class="row-fluid" id="nfi_content"style="display: none">
+    <div class="row-fluid">
+		<div id="elec_before_conflict"><p>Primary source of electricity </br>Before the conflict</p></div>
+		<div id="elec_prev_month"><p>Primary source of electricity </br>March 2015</p></div>
+	</div> 
+<div class="row-fluid"><h4>Average price (SYP) of WASH items on village markets in March 2015</h4>
+	  <div id="price_butane"><p>Butane gas (1 cannister)</br></br></p></div>
+	  <div id="price_kerosene"><p>Kerosene (1 litre)</br></br></p></div>
+	  <div id="price_propane"><p>Propane gas (1 cannister)</br></br></p></div>
+	  <div id="price_roofing"><p>Corrugated iron sheets </br> (3.2 square metre)</p></div>
+	  <div id="price_coal"><p>Coal - (1 kg)</br></br></p></div>
+	  <div id="price_fire_wood"><p>Fire wood (1 tonne) </br></br></p></div>
+	  <div id="price_wood_constr"><p>Wood for construction </br>(1 metre)</p></div>
+	  <div id="price_cement"><p>Cement (50 kg)</br></br></p></div>
+	  <div id="price_cement"><p>Cement (50 kg)</br></br></p></div>
+ </div>
+ <div class="row-fluid"><h4>Most common coping strategies people are using to cope with lack of fuel</h4>
+	  <div id='NFI_burn_furn_withoutDIV'><p>Burning furniture without use?</br></br></p></div>
+	  <div id='NFI_burn_furn_withDIV'><p>Burning furniture with use?</br></br></p></div>
+	  <div id='NFI_burn_agr_apparelDIV'><p>Burning agricultural /</br> other productive assets?</p></div>
+	  <div id='NFI_burn_clothesDIV'><p>Burning clothes?</br></br></p></div>
+	  <div id='NFI_burn_plascticsDIV'><p>Burning plastics?</br></br></p></div>
+	  <div id='NFI_burn_wasteDIV'><p>Burning waste?</br></br></p></div>
+	  <div id='NFI_lack_fuel_otherDIV'><p>Other?</br></br></p></div>
+	   </div>
+  </div>
+</div>
+  
+   <div class="row-fluid"><h3><img src="image/ic_shelter.png" width="25" height="25"style="border-width:10px;"><a> </a>Shelter <small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+	<a id="shelt_head" href="javascript:toggle('shelt_content','shelt_head');" >Show section</a>
+	| <a style="color:grey">Average confidence level: <span id='meanCONFID_Shelter'></span>/3</a></small></h3>
+    <div class="row-fluid" id="shelt_content"style="display: none">
+      <div id="type_housing_idps"><p>Most common type of housing</br>- <strong style="color:#DA4400">IDPs</strong></p></div>
+	  <div id="type_housing_pre_conf_pop"><p>Most common type of housing</br> - <strong style="color:#FF9933">host population</strong></p></div>
+	  <div id="type_housing_damaged"><p>Most common type of housing <strong style="color:#FF9933">host population</strong></br>moved to when original housing damaged</p></div>   
+    </div>
+  </div> 
+  
+  <div class="row-fluid"><h3><img src="image/ic_WASH.png" width="25" height="25"style="border-width:10px;"><a> </a>WASH<small> <a
+         href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
+		 <a id="WASH_head" href="javascript:toggle('WASH_content','WASH_head');">Show section</a>
+| <a style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
+    <div class="row-fluid" id="WASH_content"style="display: none">
+    <div class="row-fluid"><h4>Average price of WASH items on village markets in March 2015</h4>
+      <div id="price_soap"><p>Soap (one bar)</p></div>
+      <div id="price_jerrycan"><p>Jerry can (1)</p></div>
+      <div id="price_laundry"><p>Laundry powder (1kg)</p></div>
+      <div id="price_napkins"><p>Sanitary napkins / pads (1 pack of 9)</p></div>
+      <div id="price_diapers"><p>Disposable diapers (1kg)</p></div>
+	  <div id="coast_water_network"><p>Water network (1 cubic metre)</p></div>
+      <div id="coast_bottled_water"><p>Bottled water (1 litre)</p></div>
+      <div id="coast_public_water_truck"><p>Water trucking - public / subsidised (1 cubic metre)</p></div>
+      <div id="coast_private_water_truck"><p>Water trucking - private (1 cubic metre)</p></div>
+	  
+	</div>
+    <div class="row-fluid"><h4>Access to water and sanitation</h4>	  
+	<div id="water_source"><p>Most common drinking water source</p></div>	 
+	 <div id="water_status"><p>Status of water from </br> most common source accessed</p></div>
+	  <div id="access_latrines"><p>Access to latrines</p></div>
+	  <div id="dispose_garbage"><p>Most common way people </br>dispose of garbage</p></div>
+	</div>
+    <div class="row-fluid">
+    <div class="span6">
+    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since March 2015</h4>
+	  <!-- TO REMOVE -->
+	  <div id='WASH_water_system_damagedDIV'><p>Water system damaged?</br></br></p></div>
+	  <div id='WASH_water_lack_elecDIV'><p>Lack of electricity?</br></br></p></div>
+	  <div id='WASH_water_shortage_chlorineDIV'><p>Lack of chlorine?</br></br></p></div>
+	  <div id='WASH_water_lack_fuelDIV'><p>Lack of fuel?</br></br></p></div>
+	  <div id='WASH_water_treatment_damagedDIV'><p>Water treatment </br>station damaged?</p></div>
+	  <div id='WASH_water_otherDIV'><p>Other?</br></br></p></div>
+	</div>
+    </div>
+    <div class="span6">
+    <div class="row-fluid"><h4>Most common reasons for reduction in available safe water</br> in village since the conflict began</h4>
+	  <div id='WASH_water_system_damaged_since_conflictDIV'><p>Water system damaged?</br></br></p></div>
+	  <div id='WASH_water_lack_elec_since_conflictDIV'><p>Lack of electricity?</br></br></p></div>
+	  <div id='WASH_water_shortage_chlorine_since_conflictDIV'><p>Lack of chlorine?</br></br></p></div>
+	  <div id='WASH_water_lack_fuel_since_conflictDIV'><p>Lack of fuel?</br></br></p></div>
+	  <div id='WASH_water_treatment_damaged_since_conflictDIV'><p>Water treatment </br>station damaged?</p></div>
+	  <div id='WASH_water_other_since_conflictDIV'><p>Other?</br></br></p></div>
+	</div>
+	  
+    </div>
     </div>
   </div>
+  </div>
+  
+ 
+ 
+  
+
+   
+
 </div>
 
 </div>
@@ -516,11 +518,11 @@ function togglegov(showHideDiv, switchTextDiv) {
 	var text = document.getElementById(switchTextDiv);
 	if(ele.style.display == "block") {
     		ele.style.display = "none";
-		text.innerHTML = "<small>Show Governorate</small>";
+		text.innerHTML = "<small>Show Governorates</small>";
   	}
 	else {
 		ele.style.display = "block";
-		text.innerHTML = "<small>Hide Governorate</small>";
+		text.innerHTML = "<small>Hide Governorates</small>";
 	}
 }
 
