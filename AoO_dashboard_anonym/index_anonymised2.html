@@ -45,17 +45,21 @@ a:hover{text-decoration: underline;}
 #mapheader {-moz-border-radius: 15px;border-radius: 15px;position:fixed; bottom:0px; right:0px;margin: 5px 5px 5px 5px;width:200px;background-color:#EBEBEB}
 #dmapheader {margin: 5px 5px 5px 5px;}
 #dgoveader {margin: 5px 5px 5px 5px;}
-#about{position:fixed; bottom:0px;left:0; width:300px;background:rgba(255,255,255,0.5)}
-#count-info{position:fixed; top:0px; right:0; width:250px; background:rgba(255,255,255,0.5)}
+#about{-moz-border-radius: 15px;border-radius: 15px; position:fixed; top:0px;left:0px; width:300px;background:rgba(255,255,255,0.5)}
+#count-info{-moz-border-radius: 15px;border-radius: 15px; position:fixed; top:0px; right:0; width:250px; background:rgba(255,255,255,0.5)}
  
 
 </style>
 
 <div class="container-fluid">
+
+<div class="row" style="background-color:grey; height:55px; width:100%; position:fixed; bottom:0px; left:0px;margin: 0px 0px 0px 0px">
+		<div class="large-2 columns " align="left"><img src="image/REACH_logo.png" width="200" height="65"style="left:10px;margin: 10px 50px 50px 45px;"></div>
+</div>
+
 <div class="row-fluid">
-   <div class="span8"><a href="index.html"><h1>Area of Origin - Data collected during April 2015</h1></a>
+   <div class="span8"><h1>Area of Origin - Data collected during April 2015</h1>
 	   <div class="row-fluid">
-		
 		  <div id="map"><p>Sub-district assessed<p></div>	
 		  <div id="mapheader">
 			<div id="mapheader1"><a id="dmapheader" href="javascript:togglemap('inset','dmapheader');"><small>Show map</small></a>
@@ -68,7 +72,6 @@ a:hover{text-decoration: underline;}
 		 <div id="ginset"style = "position:relative;display:none">
 		  <div id="govinset"style = "position:relative"><p>Governorate<p></div>	
 		  </div>
-		  
 		  </div>
 	   </div>
    </div>
@@ -76,9 +79,9 @@ a:hover{text-decoration: underline;}
    <div class="span4"><h3>Coverage <small><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></h3>
 	<div class="span12 pull-right" id="count-info">
       	<span class="filter-count "></span> selected out of <span class="total-count "></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
-		
-      </div> 
-	<div class="span12 pull-right" id="about">
+   </div> 
+
+   <div class="span12 pull-right" id="about">
       	<span></span><h6>Area of Origin data collected during <a href="AoO_201504.csv">April 2015 </a></h6>
     </div>
 	    <div class="row-fluid">
@@ -95,7 +98,7 @@ a:hover{text-decoration: underline;}
 </div>
 <div class="row-fluid"><h3><img src="image/ic_displacement.png" width="25" height="25"style="border-width:10px;"><a> </a>Displacement <small> 
 <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | <a id="displ_head" href="javascript:toggle('displ_content','displ_head');">Show section</a>
- | <a style="color:grey">Average confidence level: <span id='meanCONFID_Displacement'></span>/3</a></small></h3>
+ | <a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_Displacement'></span>/3</a></small></h3>
     <div class="row-fluid" id="displ_content" style="display: none">
     <div class="row-fluid">
 		 <div class="span3">
@@ -167,7 +170,7 @@ a:hover{text-decoration: underline;}
     <div class="row-fluid"><h3><img src="image/ic_education.png" width="25" height="25"style="border-width:10px;"><a> </a>Education<small> <a
     href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	<a id="Education_head" href="javascript:toggle('Education_content','Education_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Education'></span>/3</a></small></h3>
+| <a href="AoO_TORs.html"style="color:grey">Average confidence level: <span id='meanCONFID_Education'></span>/3</a></small></h3>
 	 <div class="row-fluid" id="Education_content"style="display: none">
 		<div class="row-fluid">
 		  <div id="edu_prim_schoolDIV"><p>Primary school - status</p></div>
@@ -192,7 +195,7 @@ a:hover{text-decoration: underline;}
   </div>
    <div class="row-fluid"><h3><img src="image/ic_food.png" width="25" height="25"style="border-width:10px;"><a> </a>Food Security<small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
   <a id="Food_head" href="javascript:toggle('Food_content','Food_head');"  >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Food_Security'></span>/3</a></small></h3>
+| <a href="AoO_TORs.html"style="color:grey">Average confidence level: <span id='meanCONFID_Food_Security'></span>/3</a></small></h3>
     <div class="row-fluid" id="Food_content"style="display: none">
     <div class="row-fluid"><h4>Most common food sources</h4>
 			<div id='food_obt_barteningDIV'><p>Bartening?</br></br></p></div>
@@ -276,7 +279,7 @@ a:hover{text-decoration: underline;}
     </div>
 	<div class="row-fluid"><h3><img src="image/ic_health.png" width="25" height="25"style="border-width:10px;"><a> </a>Health<small>  <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
   <a id="health_head" href="javascript:toggle('health_content','health_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_Health'></span>/3</a></small></h3>
+| <a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_Health'></span>/3</a></small></h3>
     <div class="row-fluid" id="health_content"style="display: none">
     <div class="row-fluid">
       <div id="public_hospital"><p>Public hospitals - status</p></div>
@@ -347,7 +350,7 @@ a:hover{text-decoration: underline;}
   <div class="row-fluid"><h3><img src="image/ic_livelihood.png" width="25" height="25"style="border-width:10px;"><a> </a>Livelihoods<small> <a
      href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	 <a id="Livelihoods_head" href="javascript:toggle('Livelihoods_content','Livelihoods_head');"  >Show section</a>
-	| <a style="color:grey">Average confidence level: <span id='meanCONFID_Livelihoods'></span>/3</a></small></h3>
+	| <a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_Livelihoods'></span>/3</a></small></h3>
     <div class="row-fluid" id="Livelihoods_content"style="display: none">
 		 <div  class="row-fluid"><h4>Most common income/resources used by people to cover essential needs</h4>
 			  <div id='liv_inc_stable_empDIV'><p>Stable employment?</br></br></p></div>
@@ -382,7 +385,7 @@ a:hover{text-decoration: underline;}
   <div class="row-fluid"><h3><img src="image/ic_NFI2.png" width="25" height="25"style="border-width:10px;"><a> </a>Non-Food Items <small> <a
     href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> |
 	<a id="nfi_head" href="javascript:toggle('nfi_content','nfi_head');" >Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_NFI'></span>/3</a></small></h3>
+|<a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_NFI'></span>/3</a></small></h3>
     <div class="row-fluid" id="nfi_content"style="display: none">
     <div class="row-fluid">
 		<div id="elec_before_conflict"><p>Primary source of electricity </br>Before the conflict</p></div>
@@ -413,7 +416,7 @@ a:hover{text-decoration: underline;}
   
    <div class="row-fluid"><h3><img src="image/ic_shelter.png" width="25" height="25"style="border-width:10px;"><a> </a>Shelter <small> <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 	<a id="shelt_head" href="javascript:toggle('shelt_content','shelt_head');" >Show section</a>
-	| <a style="color:grey">Average confidence level: <span id='meanCONFID_Shelter'></span>/3</a></small></h3>
+	| <a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_Shelter'></span>/3</a></small></h3>
     <div class="row-fluid" id="shelt_content"style="display: none">
       <div id="type_housing_idps"><p>Most common type of housing</br>- <strong style="color:#DA4400">IDPs</strong></p></div>
 	  <div id="type_housing_pre_conf_pop"><p>Most common type of housing</br> - <strong style="color:#FF9933">host population</strong></p></div>
@@ -424,7 +427,7 @@ a:hover{text-decoration: underline;}
   <div class="row-fluid"><h3><img src="image/ic_WASH.png" width="25" height="25"style="border-width:10px;"><a> </a>WASH<small> <a
          href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a> | 
 		 <a id="WASH_head" href="javascript:toggle('WASH_content','WASH_head');">Show section</a>
-| <a style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
+| <a href="AoO_TORs.html" style="color:grey">Average confidence level: <span id='meanCONFID_WASH'></span>/3</a></small></h3>
     <div class="row-fluid" id="WASH_content"style="display: none">
     <div class="row-fluid"><h4>Average price of WASH items on village markets in March 2015</h4>
       <div id="price_soap"><p>Soap (one bar)</p></div>
