@@ -37,10 +37,10 @@ p{margin: 8px 0 20px 0; line-height: 18px;}
 a, a:visited{color: #397DB8; text-decoration: none;}
 a:hover{text-decoration: underline;}
 
-.wrapper{display: block; margin: 50px 0 0 0; padding: 4px 30px 0 30px;}
+.wrapper{display: block; margin: 0px 0 0 0; padding: 4px 30px 0 30px;}
 
-.map{background-color:#eee; position: absolute; top: 50px; left: 0; bottom: 0; width: 55%; *height:100%;}
-.sidepanel{background-color:#b6b6b6; position: absolute; top: 0px; right: 0;  bottom: 0; width: 45%; height: 100%; overflow: auto}
+.map{background-color:#eee; position: absolute; top: 50px; left: 0; bottom: 0; width: 50%; *height:100%;}
+.sidepanel{background-color:#b6b6b6; position: absolute; top: 50px; right: 0;  bottom: 0; width: 50%; *height: 100%; overflow: auto}
 
 .context{font-family: Helvetica, Arial; font-size: 13px; color: #999; padding: 10px 0 0 0;}
 .subheader{border-bottom: 1px solid #ddd;}
@@ -126,21 +126,21 @@ a:hover{text-decoration: underline;}
 								  <h4>Préfecture</h4><h5>Nombre d'évaluations</h5/>
 								</div>
 								<div  class="choctype" id="cccm" class="dc-chart">
-										<h4>Type de choc</h4><h5>Par villages évalués</h5/>
+										<h4>Type de choc</h4><h5>par villages évalués</h5/>
 								</div>
 							</div>
 							
 							  <div  class="col-md-4">
 								<div  class="pop_affect" id="cccm" class="dc-chart">
-								  <h4>Population affectée</h4><h5>Par villages évalués</h5/>
+								  <h4>Type de population affectée</h4><h5>par villages évalués</h5/>
 								</div>
 								<div  class="Partner" id="cccm" class="dc-chart">
-									  <h4>Partenaires</h4><h5>Par villages évalués</h5/>
+									  <h4>Nombre de MEx effectuées par partenaires</h4><h5></h5/>
 								</div>
 							</div>
 							 <div  class="col-md-4">
 								<div  class="acces" id="cccm" class="dc-chart">
-								  <h4>Proposition d'action</h4><h5>Par villages évalués</h5/>
+								  <h4>Proposition d'action</h4><h5>par villages évalués</h5/>
 								</div>
 								
 							</div>
@@ -152,9 +152,7 @@ a:hover{text-decoration: underline;}
 								</div>
 							</div>
 							 <div  class="col-md-4">
-								<div  class="year" id="cccm" class="dc-chart">
-								  <h4>Nombre de MEx par an</h4>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -276,20 +274,6 @@ function drawMarkerArea(data) {
         .colorDomain([0,0])
         .colorAccessor(function(d, i){return 1;})
         .xAxis().ticks(4).tickFormat(d3.format("s"));
-		
-  var yeargp  = xf.dimension(function(d) { return d['year']; });
-  var yeargroup = yeargp.group().reduceCount();
-
-  dc.rowChart("#cccm .year",groupname)
-        .dimension(yeargp)
-        .group(yeargroup)
-        .elasticX(true)
-        .width(200)
-        .height(100)
-        .renderLabel(true)
-        .ordering(function (p) { return -p.value;})
-        .colors(d3.scale.category10())
-        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
 var stdateDim = xf.dimension(function(d) {return d.DD});
 var stdategp = stdateDim.group();
@@ -346,7 +330,7 @@ var Intervgp = IntervDim.group().reduceCount();
         .colorAccessor(function(d, i){return 1;})
         .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-var Direct_Contractor_VoucherDim = xf.dimension(function(d) { return d['Partner']; });
+var Direct_Contractor_VoucherDim = xf.dimension(function(d) { return d['partnerName']; });
 var Direct_Contractor_Vouchergp = Direct_Contractor_VoucherDim.group().reduceCount();
 
   dc.rowChart("#cccm .Partner",groupname)

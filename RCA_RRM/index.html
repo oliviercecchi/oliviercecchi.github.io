@@ -96,7 +96,39 @@ h3 {
   height: 85%;
   background: #808080 url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
 }
-
+ul.nav-tabs {
+	width: 140px;
+	margin-top: 20px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+ul.nav-tabs li {
+	margin: 0;
+	border-top: 1px solid #ddd;
+}
+ul.nav-tabs li:first-child {
+	border-top: none;
+}
+ul.nav-tabs li a {
+	margin: 0;
+	padding: 8px 16px;
+	border-radius: 0;
+}
+ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover {
+	color: #fff;
+	background: #0088cc;
+	border: 1px solid #0088cc;
+}
+ul.nav-tabs li:first-child a {
+	border-radius: 4px 4px 0 0;
+}
+ul.nav-tabs li:last-child a {
+	border-radius: 0 0 4px 4px;
+}
+ul.nav-tabs.affix {
+	top: 30px; /* Set the top position of pinned element */
+}
 /* -- end custom css for Bootstrap 3.x --*/
 
  </style>
@@ -117,6 +149,7 @@ h3 {
           <ul class="nav navbar-nav">
          
 			<li><a>Accueil</a></li>
+			<li><a href="#about">About</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			<li style="top:12px"><img src="image/unicef-logo.png" width="125" height="25"style="border-width:0px;"><li>	
@@ -130,10 +163,13 @@ h3 {
     </nav>   
 	
   <div class="header vert">
+  
+		
   <div class="container">
     <h1>Mécanisme de Réponse Rapide - RRM</h1>
       <p class="lead">République Centrafricaine</p>
       <div>&nbsp;</div>
+	   
 	    <div class="row">
 		<div  class="col-md-4">
 		
@@ -196,7 +232,16 @@ h3 {
 		
 		</div>
   </div>
+
+			
+<div class="row" style="margin: 100px 0 0 0";>
+      <h2 id="about">About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
+      <p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam vitae est arcu. Mauris vel congue dolor. Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis, bibendum viverra erat. Maecenas mattis lectus enim, quis tincidunt dui molestie euismod. Curabitur et diam tristique, accumsan nunc eu, hendrerit tellus.</p>
+            <hr>
 </div>
+
+  </div>		
 </div>
 
 
