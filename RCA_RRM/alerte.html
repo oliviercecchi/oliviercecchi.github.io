@@ -108,67 +108,55 @@ a:hover{text-decoration: underline;}
 	
    <div style="display: block;"  id="dashboard">
              <div class="row" id="cccm">
-                <div  class="map" id="cccm"  > </div>
-
+                <div  class="map" id="cccm"></div>
                 <div class="sidepanel">
-					<div class="wrapper">
-						  <p id="gen"><h3>Chocs / Alertes reportées</h3></p>
-					</div>
-						
+					<div class="wrapper"><p id="gen"><h3>Chocs / Alertes reportées</h3></p>
 						<div class="row">
 							<div  class="col-md-4">
 								<div  class="pref" id="cccm" class="dc-chart">
 								  <h4>Préfecture</h4><h5>Nombre d'alertes</h5>
 								</div>
 							</div>
-							
 							<div  class="col-md-4">
-								<div  class="choctype" id="cccm" class="dc-chart">
-										<h4>Type de choc</h4><h5>Nombre d'alertes</h5>
-								</div>
-								
+								<div  class="choctype" id="cccm" class="dc-chart"><h4>Type de choc</h4><h5>Nombre d'alertes</h5></div>								
 							</div>
-							
 							 <div  class="col-md-4">
-								<div  class="acces" id="cccm" class="dc-chart">
-								  <h4>Accès humanitaire</h4><h5>Nombre d'alertes</h5>
-								</div>
-								
+								<div  class="acces" id="cccm" class="dc-chart"><h4>Accès humanitaire</h4><h5>Nombre d'alertes</h5></div>
 							</div>
 						</div>
 						 <div class="row">
 							  <div  class="col-md-4">
-								<div  class="Partner" id="cccm" class="dc-chart">
-									  <h4>Partenaires</h4><h5>Nombre d'alertes reportées</h5>
-								</div>
-								
+								<div  class="Partner" id="cccm" class="dc-chart"><h4>Partenaires</h4><h5>Nombre d'alertes reportées</h5></div>
 							  </div>
-							  <div  class="col-md-4">
-								<div  class="pop_affect" id="cccm" class="dc-chart">
-								  <h4>Type de population affectée</h4><h5>Nombre d'alertes</h5>
+							<div  class="col-md-6">
+							<div class="row"><h4>Type de population affectée par village</br></br></h4>
+								<div  class="col-md-3">
+									<div  class="popDispDIV" id="cccm" class="dc-chart"><h5>Déplacés:</br></br></h5></div>
 								</div>
-							</div>
-							
+								<div  class="col-md-3">
+									<div  class="popReturDIV" id="cccm" class="dc-chart"><h5>Retournés:</br></br></h5></div>
+								</div>
+								<div  class="col-md-3">
+									<div  class="popHotDIV" id="cccm" class="dc-chart"><h5>Communauté hote:</h6></div>
+								</div>
+								<div  class="col-md-3">
+									<div  class="popAutrDIV" id="cccm" class="dc-chart"><h5>Autre:</br></br></h5></div>			
+								</div>
+						</div>				
 						</div>	  
 						<div class="row">
 							<div  class="col-md-9">
-							   <div Class ="start_dates" id="cccm" class="dc-lineChart">
-								  <h4>Nombre d'alertes reportées</h4><h5>Selectionner le graphique pour filtrer par date</h5>
-								</div>
+							   <div Class ="start_dates" id="cccm" class="dc-lineChart"><h4>Nombre d'alertes reportées</h4><h5>Selectionner le graphique pour filtrer par date</h5></div>
 							</div>
 							 <div  class="col-md-3">
-								<div  class="year" id="cccm" class="dc-chart">
-								  <h4>Nombre d'alerte par an</h4>
-								</div>
+								<div  class="year" id="cccm" class="dc-chart"><h4>Nombre d'alerte par an</h4></div>
 							</div>
 						</div>
 					</div>
                 </div>
             </div>
-              
         </div>
     </div>
-
 
     <script type="text/javascript" src="js/intro.js"></script>
     <script type="text/javascript" src="js/d3_002.js"></script>
@@ -221,6 +209,10 @@ function regroup(dim, cols) {
     };
 }
 
+var popty = d3.scale.ordinal()
+     .domain(["Non","Oui"])
+     .range(["#afa3a4","#ff972f"]);
+	 
 function drawMarkerArea(data) {
 //function drawMarkerSelect(error,data) {
 
@@ -250,6 +242,22 @@ function drawMarkerArea(data) {
 	  //.popup(function(d){return d['Partner']+":";})
     ;
 
+ var popDispDim = xf.dimension(function(d) { return d["Population_affectee.Deplaces"]; });
+  var popDispGP = popDispDim.group(); 
+  dc.pieChart("#cccm .popDispDIV",groupname).dimension(popDispDim).group(popDispGP).width(65).height(90).innerRadius(15).colors(popty);
+  
+  var popReturDim = xf.dimension(function(d) { return d["Population_affectee.Retours"]; });
+  var popReturGP = popReturDim.group(); 
+  dc.pieChart("#cccm .popReturDIV",groupname).dimension(popReturDim).group(popReturGP).width(65).height(90).innerRadius(17).colors(popty);
+  
+  var popHotDim = xf.dimension(function(d) { return d["Population_affectee.Communaute_hote"]; });
+  var popHotGP = popHotDim.group(); 
+  dc.pieChart("#cccm .popHotDIV",groupname).dimension(popHotDim).group(popHotGP).width(65).height(90).innerRadius(17).colors(popty);
+    
+  var popAutrDim = xf.dimension(function(d) { return d["Population_affectee.Autre"]; });
+  var popAutrGP = popAutrDim.group(); 
+  dc.pieChart("#cccm .popAutrDIV",groupname).dimension(popAutrDim).group(popAutrGP).width(65).height(90).innerRadius(17).colors(popty);
+  
   var pref = xf.dimension(function(d) { return d['PREF_NOM']; });
   var villsect = pref.group().reduceCount();
   
